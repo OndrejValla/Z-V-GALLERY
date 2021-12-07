@@ -58,7 +58,7 @@
 
 <body>
     <header class="container-fluid fixed-top">
-        <div id="topnav" class="row bg-white d-lg-flex">
+        <div id="topnav" class="row bg-white">
             <div class="col-3">
             </div>
             <!-- Logo Header -->
@@ -68,7 +68,7 @@
                 </a>
             </div>
             <!-- Accounts & Basket -->
-            <div class="col-3 my-auto py-lg-0">
+            <div class="col-3 my-auto py-lg-0 d-none d-lg-block d-xl-block">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
@@ -108,6 +108,16 @@
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="row bg-white">
+            <nav class="navbar navbar-expand-lg navbar-light w-100">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/mobile-top-header.html' %}
+                {% include 'includes/main-nav.html' %}
+            </nav>
         </div>
     </header>
 

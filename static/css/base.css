@@ -10,30 +10,27 @@ body {
 }
 
 #topnav {
-    height: 200px;
+    height: 110px;
 }
 
 .main-logo {
-    height: 30%;
-    width: 30%;
+    height: 140px;
+    width: 200px;
     border: gray;
     border-style: solid;
     border-width: 2px;
     border-radius: 50%;
 }
 
-header {
-    height: 205px;
-    background: gray;
-}
-
 #home-page-menu {
     height: 800px;
+    position: relative;
     background: url(/media/home-page-menu-background.jpg) no-repeat center center;
     background-size: auto;
 }
 
 #color-overlay {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;

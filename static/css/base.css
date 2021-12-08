@@ -3,14 +3,14 @@ html {
 }
 
 body {
-    height: calc(300vh - 200px);
+    height: calc(300vh - 150px);
     color: black;
-    background: white;
+    background: whitesmoke;
     font-family: 'Playfair Display', serif;
 }
 
 #topnav {
-    height: 110px;
+    height: 180px;
 }
 
 .main-logo {
@@ -23,10 +23,28 @@ body {
 }
 
 #home-page-menu {
-    height: 800px;
+    height: 650px;
     position: relative;
     background: url(/media/home-page-menu-background.jpg) no-repeat center center;
-    background-size: auto;
+    background-size: cover;
+}
+
+.home-page-button {
+    height: 55px;
+    width: 35vw;
+    color: black;
+    font-size: x-large;
+    font-weight: bold;
+    background-color: Transparent;
+    border: 3px solid black;
+    cursor: pointer;
+    overflow: auto;
+    margin-top: 6%;
+}
+
+.home-page-button:hover {
+    color: white;
+    background-color: black;
 }
 
 #color-overlay {
@@ -34,9 +52,13 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 800px;
+    height: 650px;
     background-color: white;
-    opacity: 0.4;
+    opacity: 0.5;
+}
+
+.products-container {
+    margin-top: 2px;
 }
 
 

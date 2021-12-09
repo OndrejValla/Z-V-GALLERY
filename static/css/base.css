@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    height: calc(300vh - 150px);
+    height: calc(100vh);
     color: black;
     background: whitesmoke;
     font-family: 'Playfair Display', serif;
@@ -43,8 +43,7 @@ body {
 }
 
 .home-page-button:hover {
-    color: white;
-    background-color: black;
+    background-color: white;
 }
 
 #color-overlay {

@@ -9,6 +9,25 @@
             <hr class="w-50 mb-1">
         </div>
     </div>
+    <!----Search Prints Form---->
+    <div class="row text-center mt-3 mb-5">
+        <div class="col-6 offset-3 my-auto py-1 py-lg-0">
+            <form method="GET" action="{% url 'products' %}">
+                <div class="input-group w-100">
+                    <input class="form-control border border-black rounded-0" type="text" name="q"
+                        placeholder="Search our prints">
+                    <div class="input-group-append">
+                        <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                            <span class="icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!---All Prints--->
     <div class="row">
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-2"></div>

@@ -9,13 +9,33 @@
             <hr class="w-50 mb-1">
         </div>
     </div>
-    <!----Search Prints Form---->
-    <div class="row text-center mt-3 mb-5">
-        <div class="col-6 offset-3 my-auto py-1 py-lg-0">
+    <div class="row">
+        <!----Sort by  Projects---->
+        <div class="col-3">
+            <ul class="list-inline list-unstyled text-center">
+                <li class="list-inline-item dropdown">
+                    <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <div class="text-center">
+                            <div><i class="fas fa-camera-retro"></i></div>
+                            <h6 class="my-0">View by Project</h6>
+                            <div><i class="fas fa-sort-down"></i></div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                        <a href="{% url 'products' %}?project=in_the_bath" class="dropdown-item">In the Bath</a>
+                        <a href="{% url 'products' %}?project=ginger" class="dropdown-item">Ginger</a>
+                        <a href="{% url 'products' %}?project=in_the_bath,ginger" class="dropdown-item">All Projects</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!----Search Prints Form---->
+        <div class="col-6 mt-3">
             <form method="GET" action="{% url 'products' %}">
                 <div class="input-group w-100">
                     <input class="form-control border border-black rounded-0" type="text" name="q"
-                        placeholder="Search our prints">
+                        placeholder="Search...">
                     <div class="input-group-append">
                         <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                             <span class="icon">
@@ -26,11 +46,12 @@
                 </div>
             </form>
         </div>
+        <div class="col-3"></div>
     </div>
     <!---All Prints--->
-    <div class="row">
+    <div class="row mt-3">
         <div class="product-container col-10 offset-1">
-            <div class="row mt-1 mb-2"></div>
+            <div class="row mt-1 mb-1"></div>
             <div class="row">
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
@@ -68,22 +89,22 @@
                 </div>
                 <!--- Thank You to Code Institute for a great example of cards separation --->
                 {% if forloop.counter|divisibleby:1 %}
-                <div class="col-12 d-sm-none mb-5">
+                <div class="col-12 d-sm-none mb-3">
                     <hr>
                 </div>
                 {% endif %}
                 {% if forloop.counter|divisibleby:2 %}
-                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-3">
                     <hr>
                 </div>
                 {% endif %}
                 {% if forloop.counter|divisibleby:3 %}
-                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                <div class="col-12 d-none d-lg-block d-xl-none mb-3">
                     <hr>
                 </div>
                 {% endif %}
                 {% if forloop.counter|divisibleby:4 %}
-                <div class="col-12 d-none d-xl-block mb-5">
+                <div class="col-12 d-none d-xl-block mb-3">
                     <hr>
                 </div>
                 {% endif %}

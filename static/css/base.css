@@ -56,7 +56,27 @@ body {
     opacity: 0.5;
 }
 
+/*---------- products.html -------*/
 
+.to-top-button {
+    height: 75px;
+    width: 75px;
+    color: gray;
+    font-size: xx-large;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+@media (max-width: 650px) {
+    .to-top-button {
+        position: fixed;
+        bottom: 0px;
+        right: 1px;
+        padding-left: 40px;
+    }
+}
 
 
 

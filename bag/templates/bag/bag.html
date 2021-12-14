@@ -13,8 +13,59 @@
     <div class="row">
         <div class="col text-center mt-5">
             {% if bag_items %}
-            <div>
-                {{ bag_items }}
+            <div class="table-responsive">
+                <table class="table table-sm table-boardless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product Info</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    {% for item in bag_items %}
+                    <tr>
+                        <td class="p-3 w-25">
+                            <img src="{{ item.product.image1.url }}" alt="{{ product.name }}" class="img-fluid">
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">${{ item.product.price }}</p>
+                        </td>
+                        <td class="py-3 w-25">
+                            <p class="my-0">{{ item.quantity }}</p>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">${{ item.product.price }}</p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5" class="pt-5 text-center">
+                            <h5><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h5>
+                            <p>Delivery: ${{ delivery|floatformat:2 }}</p>
+                            <h3 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h3>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="row text-center">
+                <div class="col-6 col-md-3 offset-md-2 mb-5">
+                    <a href="{% url 'products' %}" class="btn btn-outline-dark btn-lg">
+                        <i class="fas fa-long-arrow-alt-left"></i>
+                        <span class="text-uppercase">Keep Shopping</span>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3 offset-md-2 mb-5">
+                    <a href="" class="btn btn-success rounded-1 btn-lg">
+                        <i class="fas fa-lock"></i>
+                        <span class="text-uppercase">Secure Checkout</span>
+                    </a>
+                </div>
             </div>
             {% else %}
             <h5 class="mb-5">Your shopping bag is empty!</h5>

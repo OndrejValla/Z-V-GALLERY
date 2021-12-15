@@ -21,7 +21,9 @@
     {% if product.image1 %}
     <div class="row text-center">
         <div class="col-12 col-lg-4 mb-5 mt-5">
-            <img class="col-lg-10 col-sm-8" src="{{ product.image2.url }}" alt="{{ product.name }}">
+            <a href="{{ product.image2.url }}" target="_blank">
+                <img class="col-lg-10 col-sm-8" src="{{ product.image2.url }}" alt="{{ product.name }}">
+            </a>
         </div>
         <div class="col-12 col-lg-4 mb-5 mt-5">
             <a href="{{ product.image1.url }}" target="_blank">
@@ -29,7 +31,9 @@
             </a>
         </div>
         <div class="col-12 col-lg-4 mb-5 mt-5">
-            <img class="col-lg-10 col-sm-8" src="{{ product.image3.url }}" alt="{{ product.name }}">
+            <a href="{{ product.image3.url }}" target="_blank">
+                <img class="col-lg-10 col-sm-8" src="{{ product.image3.url }}" alt="{{ product.name }}">
+            </a>
         </div>
     </div>
     {% else %}
@@ -45,11 +49,21 @@
             <hr class="w-50 mb-1">
             <p class="lead font-weight-bold">${{ product.price }}</p>
         </div>
-        <div class="col-12 mb-5">
+        <div class="col-12 mb-3">
             {% if product.rating %}
             <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+            {% endif %}
+        </div>
+        <div class="col-4 offset-4 col-md-2 offset-md-5 mb-3">
+            {% if product.framed %}
+            <p><strong>Frame:</strong></p>
+            <select name="product_frame" id="id_product_frame" class="form-control">
+                <option value="white">White</option>
+                <option value="black">Black</option>
+                <option value="no-frame">No Frame</option>
+            </select>
             {% else %}
-            <small class="text-muted">No Rating</small>
+            <small>Frame option not available</small>
             {% endif %}
         </div>
     </div>
@@ -58,7 +72,6 @@
         {% csrf_token %}
         <div class="row text-center">
             <div class="col-4 offset-4 col-md-2 offset-md-5 mb-3">
-
                 <p class="mt-3"><strong>Quantity:</strong></p>
                 <div class="form-group">
                     <div class="input-group">
@@ -76,7 +89,7 @@
                     </span>
                     <span class="text-uppercase">Keep Shopping</span>
                 </a>
-                <input type="submit" class="btn btn-success text-uppercase mb-5" value="Add to Bag">
+                <input type="submit" class="btn btn-success text-uppercase mb-5" value="+ Add to Bag">
             </div>
             <input type="hidden" name="redirect_url" value="{{ request.path }}">
         </div>

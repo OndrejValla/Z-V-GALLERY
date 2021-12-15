@@ -33,14 +33,13 @@
                         </td>
                         <td class="py-3">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0">Frame:
-                                {% if item.product.framed %}{{ item.frame|upper }}{% else %}N/A{% endif %}</p>
                         </td>
                         <td class="py-3">
                             <p class="my-0">${{ item.product.price }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">{{ item.product.framed }}</p>
+                            <p class="my-0">{% if item.product.framed %}{{ item.frame|upper }}{% else %}N/A{% endif %}
+                            </p>
                         </td>
                         <td class="py-3">
                             <p class="my-0">{{ item.quantity }}</p>

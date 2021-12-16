@@ -78,6 +78,13 @@ body {
     }
 }
 
+/*------- bag.html -----*/
+/*--- Boutique Ado CSS ---*/
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 
 
 

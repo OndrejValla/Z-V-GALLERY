@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block content %}
-
 <div class="container mb-3">
     <div class="row">
         <div class="col text-center mt-3">
@@ -28,23 +28,28 @@
 
                     {% for item in bag_items %}
                     <tr>
+                        <!--- Product Image --->
                         <td class="p-3 w-25">
                             <img src="{{ item.product.image1.url }}" alt="{{ product.name }}" class="img-fluid">
                         </td>
+                        <!--- Product Name --->
                         <td class="py-3">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                         </td>
+                        <!--- Product Price --->
                         <td class="py-3">
                             <p class="my-0">${{ item.product.price }}</p>
                         </td>
+                        <!--- Product Frame --->
                         <td class="py-3">
                             <p class="my-0">{% if item.product.framed %}{{ item.frame|upper }}{% else %}N/A{% endif %}
                             </p>
                         </td>
+                        <!--- Product Quantity--->
                         <td class="py-3">
-                            <form class="form update-form" method="POST" action="">
+                            <!--- Plus Minus quantity buttons by Code Institute. Thanks --->
+                            <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
-                                <!--- Plus Minus quantity buttons by Code Institute. Thanks --->
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -74,13 +79,15 @@
                             </form>
                             <a class="update-link text-info float-left"><small>Update</small></a>
                             <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
-                                data-size="{{ item.size }}"><small>Remove</small></a>
+                                data-product_frame="{{ item.frame }}"><small>Remove</small></a>
                         </td>
+                        <!--- Product * Quantity = Subtotal --->
                         <td class="py-3">
-                            <p class="my-0">${{ item.product.price }}</p>
+                            <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                     </tr>
                     {% endfor %}
+                    <!--- Bag Grand Total --->
                     <tr>
                         <td colspan="7" class="pt-5 text-center">
                             <h5><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h5>
@@ -133,11 +140,11 @@
     $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}"
         var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('size');
-        var url = `/bag/remove/${itemId}`;
+        var frame = $(this).data('product_frame');
+        var url = `/bag/remove/${itemId}/`;
         var data = {
             'csrfmiddlewaretoken': csrfToken,
-            'size': size
+            'product_frame': frame
         };
 
         $.post(url, data)

@@ -9,6 +9,10 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
+#top-header {
+    background: aqua;
+}
+
 #topnav {
     height: 180px;
 }
@@ -56,19 +60,33 @@ body {
     opacity: 0.5;
 }
 
-/*---------- Info messages -------*/
+/*--- Info messages ---*/
 .message-container {
-    position: fixed;
+    position: absolute;
     top: 120px;
     right: 28px;
     z-index: 10;
 }
 
 .toast-capper {
-    height: 3px;
+    height: 2px;
 }
 
-/*---------- products.html -------*/
+/*--- Shopping Bag ---*/
+
+.shopping-bag-pop-out-window {
+    height: 110px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/*--- Shopping Bag - Boutique Ado CSS ---*/
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+/*--- products.html ---*/
 .to-top-button {
     height: 75px;
     width: 75px;
@@ -89,19 +107,7 @@ body {
     }
 }
 
-/*------- bag.html -----*/
-/*--- Boutique Ado CSS ---*/
-.update-link,
-.remove-item {
-    cursor: pointer;
-}
-
-
-
-
-
-
-/* ------------------- CSS by Code Institute from Boutique Ado project  */
+/*--- CSS by Code Institute from Boutique Ado project ---*/
 .text-black {
     color: #000 !important;
 }
@@ -110,7 +116,7 @@ body {
     border: 1px solid black !important;
 }
 
-/* Slightly larger container on xl screens */
+/*--- Slightly larger container on xl screens ---*/
 @media (min-width: 1200px) {
     .container {
         max-width: 80%;

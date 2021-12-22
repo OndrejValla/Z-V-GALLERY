@@ -30,7 +30,9 @@
                     <tr>
                         <!--- Product Image --->
                         <td class="p-3 w-25">
-                            <img src="{{ item.product.image1.url }}" alt="{{ product.name }}" class="img-fluid">
+                            <a href="{% url 'product_detail' item.product.id %}">
+                                <img src="{{ item.product.image1.url }}" alt="{{ product.name }}" class="img-fluid">
+                            </a>
                         </td>
                         <!--- Product Name --->
                         <td class="py-3">
@@ -105,7 +107,7 @@
                     </a>
                 </div>
                 <div class="col-6 col-md-3 offset-md-2 mb-5">
-                    <a href="" class="btn btn-success rounded-1 btn-lg">
+                    <a href="{% url 'checkout' %}" class="btn btn-success rounded-1 btn-lg">
                         <i class="fas fa-lock"></i>
                         <span class="text-uppercase">Secure Checkout</span>
                     </a>

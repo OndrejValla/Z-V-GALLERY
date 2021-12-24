@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content %}
-
-<div id="home-page-menu" class="container">
+<!--- Home Page Menu --->
+<div id="home-page-menu" class="container pt-4 mb-5">
     <div id="color-overlay"></div>
     <div class="row justify-content-center align-content-center">
         <a href="" class="col-10 col-sm-6 home-page-button btn">GALLERY</a>
@@ -12,17 +12,40 @@
         <a href="" class="col-10 col-sm-6 home-page-button btn">ART SERIES</a>
     </div>
     <div class="row justify-content-center align-content-center ">
-        <a href="" class="col-10 col-sm-6 home-page-button btn">ARTIST INFO</a>
+        <a href="#home-artist" class="col-10 col-sm-6 home-page-button btn">ARTIST INFO</a>
     </div>
     <div class="row justify-content-center align-content-center ">
         <a href="{% url 'products' %}" class="col-10 col-sm-6 home-page-button btn">SHOP</a>
     </div>
 </div>
-
-<div class="container">
+<!--- Artist Info --->
+<div class="container mt-3 mb-5">
     <div class="row">
-        <div class="col-12">
-            <div id="color-overlay"></div>
+        <a id="home-artist"></a>
+        <div id="artist-image" class="col-12 col-lg-6 text-center mb-3 mt-3">
+        </div>
+        <div class="col-12 col-lg-5 bg-white text-center about-zuzu">
+            <h2 class="mt-4">About</h2>
+            <hr class="w-50 mb-2">
+            <p class="artist-p mb-3">Zuzu Valla is Slovak photographer, currently living in the U.K.
+                <br> Zuzu is defining her very own and recognisable signature of the photography style by
+                exploring multiple layers of distinct human beauty.
+                <br>She was brought up in a traditional Slovak family,
+                growing up in the last years of strong communism regime and social transformation of
+                Slovakia.
+                <br>Zuzu’s grandfather was a keen amateur photographer shooting in black and white, while her
+                grandmother had been using special painting method to colour his photographs.
+                <br>Zuzu started her interest in photography almost by accident in her late 20s. After being
+                disappointed by using a mobile phone camera,
+                she reached for her first DSLR camera and has never looked back.
+                Photography had become her passion.
+                <br>Zuzu is excited about capturing the moments
+                where beauty, sadness and mystery come together,
+                creating her unique visual signature.
+            </p>
+            <a href="" class="btn btn-outline-dark mb-1">
+                <span class="text-uppercase">Contact</span>
+            </a>
         </div>
     </div>
 </div>

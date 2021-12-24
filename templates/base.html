@@ -58,22 +58,22 @@
 
 <body>
     <header class="container-fluid">
-        <div id="topnav" class="row bg-white">
+        <div id="topnav" class="row bg-whitesmoke">
             <div class="col-3">
             </div>
             <!-- Logo Header -->
             <div class="col-6 my-auto py-1 py-lg-0 text-center">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                <a href="{% url 'home' %}" class="main-logo-link">
                     <img src="/media/zuzu-valla-logo.png" class="main-logo" alt="zuzu-valla-logo">
                 </a>
             </div>
             <!-- Accounts & Basket -->
-            <div class="col-3 my-auto py-lg-0 d-none d-lg-block d-xl-block">
+            <div class="col-3 my-auto py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
+                            <div class="d-none d-lg-block d-xl-block text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0">My Account</p>
                             </div>
@@ -94,7 +94,7 @@
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                             href="{% url 'view_bag' %}">
-                            <div class="text-center">
+                            <div class="text-center d-none d-lg-block d-xl-block">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}

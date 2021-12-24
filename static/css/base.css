@@ -5,25 +5,27 @@ html {
 body {
     height: calc(100vh);
     color: black;
-    background: whitesmoke;
+    background: white;
     font-family: 'Playfair Display', serif;
-}
-
-#top-header {
-    background: aqua;
 }
 
 #topnav {
     height: 180px;
+    /* IMG FROM WWW.TEAHUB.IO */
+    background: url(/media/top-white-background.jpg);
+    background-repeat: repeat;
+    background-position: 98% 31%;
 }
 
 .main-logo {
     height: 140px;
     width: 200px;
-    border: gray;
+    border: white;
     border-style: solid;
     border-width: 2px;
     border-radius: 50%;
+    box-shadow: rgba(245, 240, 240, 0.9) 0 0 75px;
+    border-collapse: collapse;
 }
 
 #home-page-menu {
@@ -50,6 +52,24 @@ body {
     background-color: white;
 }
 
+@media (max-width: 767px) {
+    .home-page-button {
+        margin-top: 15%;
+    }
+}
+
+@media (min-width: 1800px) {
+    .home-page-button {
+        margin-top: 4%;
+    }
+}
+
+@media (min-width: 2800px) {
+    .home-page-button {
+        margin-top: 1%;
+    }
+}
+
 #color-overlay {
     position: absolute;
     top: 0;
@@ -58,6 +78,14 @@ body {
     height: 650px;
     background-color: white;
     opacity: 0.5;
+}
+
+#artist-image {
+    min-height: 550px;
+    background: url(/media/zuzu-valla-about.jpg);
+    background-position: 50% 15%;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 /*--- Info messages ---*/

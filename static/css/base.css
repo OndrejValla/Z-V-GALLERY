@@ -6,7 +6,7 @@ body {
     height: calc(100vh);
     color: black;
     background: white;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', sans-serif;
 }
 
 #topnav {
@@ -101,7 +101,6 @@ body {
 }
 
 /*--- Shopping Bag ---*/
-
 .shopping-bag-pop-out-window {
     height: 120px;
     overflow-x: hidden;

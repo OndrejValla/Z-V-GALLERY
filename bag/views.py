@@ -32,7 +32,7 @@ def add_to_bag(request, item_id):
                 messages.success(request, f'{product.name} with {frame.upper()} frame has been added.')
         else:
             bag[item_id] = {'items_by_frame': {frame: quantity}}
-            messages.success(request, f'YOUR FIRST PRINT: {product.name} with {frame.upper()} frame is now in the Bag!')
+            messages.success(request, f'{product.name} with {frame.upper()} frame is now in the Bag!')
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity

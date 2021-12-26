@@ -4,7 +4,6 @@
 <html lang="en">
 
 <head>
-
     {% block meta %}
     <!-- Meta tags -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -14,6 +13,10 @@
 
     {% block extra_meta %}
     {% endblock %}
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <title>Z-V-Gallery {% block extra_title %}{% endblock %}</title>
 
     {% block corecss %}
     <!-- Bootstrap CSS -->
@@ -52,10 +55,6 @@
 
     {% block extra_js %}
     {% endblock %}
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
-    <title>Z-V-Gallery {% block extra_title %}{% endblock %}</title>
 </head>
 
 <body>

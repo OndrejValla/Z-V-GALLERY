@@ -4,10 +4,19 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col text-center mt-3">
+        <div class="col-12 col-md-4 text-left">
+            <a href="{% url 'products' %}" class="btn btn-sm btn-outline-dark mb-5">
+                <span class="icon">
+                    <i class="fas fa-long-arrow-alt-left"></i>
+                </span>
+                <span class="text-uppercase">Back to Shop</span>
+            </a>
+        </div>
+        <div class="col-12 col-md-4 text-center mt-3">
             <h2 class="logo-font">Details</h2>
             <hr class="w-50 mb-1">
         </div>
+        <div class="col-12 col-md-4"></div>
     </div>
     <div class="row text-center">
         <div class="col-12 product-name-container mb-3 mt-5">

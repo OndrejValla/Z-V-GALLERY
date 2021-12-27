@@ -2,30 +2,33 @@
 {% load static %}
 
 {% block content %}
-<!--- Home Page Menu --->
+<!-- Home Page Menu -->
 <div id="home-page-menu" class="container pt-4 mb-5">
     <div id="color-overlay"></div>
+    <div class="row justify-content-center align-content-center ">
+        <a href="#home-artist" class="col-10 col-sm-6 home-page-button btn">Artist Info</a>
+    </div>
+    <div class="row justify-content-center align-content-center ">
+        <a href="#home-art-series" class="col-10 col-sm-6 home-page-button btn">Art Series</a>
+    </div>
     <div class="row justify-content-center align-content-center">
-        <a href="" class="col-10 col-sm-6 home-page-button btn">GALLERY</a>
+        <a href="" class="col-10 col-sm-6 home-page-button btn">Button</a>
+    </div>
+    <div class="row justify-content-center align-content-center">
+        <a href="" class="col-10 col-sm-6 home-page-button btn">Button</a>
     </div>
     <div class="row justify-content-center align-content-center ">
-        <a href="" class="col-10 col-sm-6 home-page-button btn">ART SERIES</a>
-    </div>
-    <div class="row justify-content-center align-content-center ">
-        <a href="#home-artist" class="col-10 col-sm-6 home-page-button btn">ARTIST INFO</a>
-    </div>
-    <div class="row justify-content-center align-content-center ">
-        <a href="{% url 'products' %}" class="col-10 col-sm-6 home-page-button btn">SHOP</a>
+        <a href="{% url 'products' %}" class="col-10 col-sm-6 home-page-button btn">Shop</a>
     </div>
 </div>
-<!--- Artist Info --->
+<!-- Artist Info -->
+<a id="home-artist"></a>
 <div class="container mt-3 mb-5">
     <div class="row">
-        <a id="home-artist"></a>
-        <div id="artist-image" class="col-12 col-lg-6 text-center mb-3 mt-3">
+        <div id="artist-image" class="col-12 col-lg-5 text-center mb-3 mt-3">
         </div>
-        <div class="col-12 col-lg-5 bg-white text-center about-zuzu">
-            <h2 class="mt-4">About</h2>
+        <div class="col-12 col-lg-7 bg-white text-center about-zuzu">
+            <h1 class="mt-4">About</h1>
             <hr class="w-50 mb-2">
             <p class="artist-p mb-3">Zuzu Valla is Slovak photographer, currently living in the U.K.
                 <br> Zuzu is defining her very own and recognisable signature of the photography style by
@@ -49,7 +52,89 @@
         </div>
     </div>
 </div>
-<!--- Back to the Top button--->
+<!-- Art Series -->
+<a id="home-art-series"></a>
+<div class="container mt-5 mb-5">
+    <div class="row mt-5 mb-2">
+        <div class="col-6 offset-3 text-center">
+            <h1 class="pl-4 mt-4">Art Series</h1>
+            <hr class="uderline-left mb-3">
+        </div>
+    </div>
+    <!-- In the Bath -->
+    <div class="row art-series-row mt-4 mb-2">
+        <div class="col-12 col-md-5">
+            <div class="card-img card">
+                <a href="">
+                    <img class="img-fluid" src="/media/in-the-bath-series.jpg" alt="In the Bath">
+                </a>
+            </div>
+        </div>
+        <div class="col-12 col-md-7 text-center">
+            <div class="card-info card-body">
+                <h3 class="">In the Bath</h3>
+                <p class="">In the Bath In the Bath In the Bath In the Bath In the Bath</p>
+            </div>
+            <div>
+                <a href="" class="btn btn-outline-dark">
+                    <span class="text-uppercase">See More</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Ginger -->
+    <div class="row art-series-row mt-4 mb-2">
+        <div class="col-12 col-md-5 order-md-last">
+            <div class="card-img card">
+                <a href="">
+                    <img class="img-fluid" src="/media/in-the-bath-series.jpg" alt="In the Bath">
+                </a>
+            </div>
+        </div>
+        <div class="col-12 col-md-7 text-center">
+            <div class="card-info card-body">
+                <h3 class="">No 2</h3>
+                <p class="">No 2 No 2 No 2No 2 No 2 No 2No 2No 2 No 2No 2No 2</p>
+            </div>
+            <div>
+                <a href="" class="btn btn-outline-dark">
+                    <span class="text-uppercase">See More</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Collages -->
+    <div class="row art-series-row mt-4 mb-2">
+        <div class="col-12 col-md-5">
+            <div class="card-img card">
+                <a href="">
+                    <img class="img-fluid" src="/media/in-the-bath-series.jpg" alt="In the Bath">
+                </a>
+            </div>
+        </div>
+        <div class="col-12 col-md-7 text-center">
+            <div class="card-info card-body">
+                <h3 class="">No 3</h3>
+                <p class="">No 3 No 3 No 3 No 3No 3No 3No 3 No 3 No 3 vv</p>
+            </div>
+            <div>
+                <a href="" class="btn btn-outline-dark">
+                    <span class="text-uppercase">See More</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Gallery -->
+<div class="container mt-5 mb-5">
+    <div class="row mt-5 mb-2">
+        <div class="col-6 offset-3 text-center">
+            <h1 class="pl-4 mt-4">Gallery</h1>
+            <hr class="uderline-left mb-3">
+        </div>
+    </div>
+</div>
+<!-- Back to the Top button -->
 <div class="to-top-button">
     <a class="to-top-button-link">
         <i class="fas fa-angle-double-up" title="Back To Top"></i>

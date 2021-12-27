@@ -15,6 +15,7 @@ body {
     background: url(/media/top-white-background.jpg);
     background-repeat: repeat;
     background-position: 98% 31%;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.979);
 }
 
 .main-logo {
@@ -45,7 +46,7 @@ body {
     border: 3px solid black;
     cursor: pointer;
     overflow: auto;
-    margin-top: 6%;
+    margin-top: 5%;
 }
 
 .home-page-button:hover {
@@ -54,13 +55,25 @@ body {
 
 @media (max-width: 767px) {
     .home-page-button {
-        margin-top: 15%;
+        margin-top: 10%;
     }
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 767px) {
+    .home-page-button {
+        margin-top: 5%;
+    }
+}
+
+@media (min-width: 1500px) {
     .home-page-button {
         margin-top: 4%;
+    }
+}
+
+@media (min-width: 2000px) {
+    .home-page-button {
+        margin-top: 3%;
     }
 }
 
@@ -86,6 +99,20 @@ body {
     background-position: 50% 15%;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.art-series-row {
+    background: url(/media/art-series-background.jpg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border: 2px solid rgba(0, 0, 0, .1);
+}
+
+.card-info {
+    margin-bottom: 15px;
 }
 
 /*--- Info messages ---*/

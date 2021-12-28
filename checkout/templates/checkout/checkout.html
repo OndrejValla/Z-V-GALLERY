@@ -26,28 +26,30 @@
                     <p class="mb-3"><strong>Subtotal:</strong></p>
                 </div>
             </div>
-            {% for item in bag_items %}
-            <div class="row">
-                <div class="col-2 mb-3">
-                    <a href="{% url 'product_detail' item.product.id %}">
-                        {% if item.product.image1 %}
-                        <img class="w-100" src="{{ item.product.image1.url }}" alt="{{ product.name }}">
-                        {% else %}
-                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                        {% endif %}
-                    </a>
+            <div class="checkout-order-summary">
+                {% for item in bag_items %}
+                <div class="row">
+                    <div class="col-2 mb-3">
+                        <a href="{% url 'product_detail' item.product.id %}">
+                            {% if item.product.image1 %}
+                            <img class="w-100" src="{{ item.product.image1.url }}" alt="{{ product.name }}">
+                            {% else %}
+                            <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="col-7">
+                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                        <p class="my-0 small">{% if item.product.framed %}{{ item.frame|upper }}
+                            Frame{% else %}N/A{% endif %}</p>
+                        <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                    </div>
+                    <div class="col-3 text-right">
+                        <p class="my-0 small">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                    </div>
                 </div>
-                <div class="col-7">
-                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                    <p class="my-0 small">{% if item.product.framed %}{{ item.frame|upper }}
-                        Frame{% else %}N/A{% endif %}</p>
-                    <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
-                </div>
-                <div class="col-3 text-right">
-                    <p class="my-0 small">${{ item.product.price | calc_subtotal:item.quantity }}</p>
-                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
             <hr class="mb-3">
             <div class="row">
                 <div class="col-7 offset-2">

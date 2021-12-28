@@ -192,5 +192,26 @@
             </div>
         </div>
     </div>
+    <!-- Back to Profile page button -->
+    <div class="row">
+        <div class="col-6 offset-3 text-center mt-2 mb-5">
+            {% if from_profile %}
+            <a href="{% url 'profile' %}" class="btn btn-outline-dark mb-1">
+                <span class="icon">
+                    <i class="fas fa-long-arrow-alt-left"></i>
+                </span>
+                <span class="text-uppercase">My Profile</span>
+            </a>
+            {% else %}
+            <!-- Back to Home page button -->
+            <a href="{% url 'home' %}" class="btn btn-outline-dark mb-1">
+                <span class="icon">
+                    <i class="fas fa-long-arrow-alt-left"></i>
+                </span>
+                <span class="text-uppercase">Home Page</span>
+            </a>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock %}

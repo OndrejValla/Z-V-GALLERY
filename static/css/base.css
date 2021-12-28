@@ -102,6 +102,7 @@ body {
 }
 
 .art-series-row {
+    /*-- IMG FROM WWW.TEAHUB.IO --*/
     background: url(/media/art-series-background.jpg);
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -113,6 +114,12 @@ body {
 
 .card-info {
     margin-bottom: 15px;
+}
+
+@media (max-width: 430px) {
+    .art-series-h1 {
+        font-size: 30px;
+    }
 }
 
 /*-- Info messages --*/

@@ -1,3 +1,8 @@
+.checkout-order-summary {
+    max-height: 464px;
+    overflow-y: auto;
+}
+
 /*--- CSS by Code Institute ---*/
 .StripeElement,
 .stripe-style-input {

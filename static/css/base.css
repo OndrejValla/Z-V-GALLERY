@@ -11,7 +11,7 @@ body {
 
 #topnav {
     height: 180px;
-    /* IMG FROM WWW.TEAHUB.IO */
+    /*-- IMG FROM WWW.TEAHUB.IO --*/
     background: url(/media/top-white-background.jpg);
     background-repeat: repeat;
     background-position: 98% 31%;
@@ -115,7 +115,7 @@ body {
     margin-bottom: 15px;
 }
 
-/*--- Info messages ---*/
+/*-- Info messages --*/
 .message-container {
     position: absolute;
     top: 120px;
@@ -127,20 +127,20 @@ body {
     height: 2px;
 }
 
-/*--- Shopping Bag ---*/
+/*-- Shopping Bag --*/
 .shopping-bag-pop-out-window {
     height: 120px;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
-/*--- Shopping Bag - CSS from Boutique Ado ---*/
+/*-- Shopping Bag - CSS from Boutique Ado --*/
 .update-link,
 .remove-item {
     cursor: pointer;
 }
 
-/*--- products.html ---*/
+/*-- products.html --*/
 .to-top-button {
     height: 75px;
     width: 75px;
@@ -161,7 +161,7 @@ body {
     }
 }
 
-/*--- CSS by Code Institute from Boutique Ado project ---*/
+/*-- CSS by Code Institute from Boutique Ado project --*/
 .text-black {
     color: #000 !important;
 }
@@ -170,20 +170,20 @@ body {
     border: 1px solid black !important;
 }
 
-/*--- Slightly larger container on xl screens ---*/
+/*-- Slightly larger container on xl screens --*/
 @media (min-width: 1200px) {
     .container {
         max-width: 80%;
     }
 }
 
-/* Allauth form formatting */
+/*-- Allauth form formatting --*/
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem;
     /* mt-4 */
     color: black;
-    /* text-secondary */
+    /*-- text-secondary --*/
 }
 
 .allauth-form-inner-content input {
@@ -201,7 +201,7 @@ body {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-    /* btn */
+    /*-- btn --*/
     display: inline-block;
     font-weight: 400;
     color: #fff;
@@ -218,7 +218,7 @@ body {
     line-height: 1.5;
     border-radius: 0;
 
-    /* standard bootstrap btn transitions */
+    /*-- standard bootstrap btn transitions --*/
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
@@ -231,5 +231,5 @@ body {
 
 .allauth-form-inner-content a {
     color: #17a2b8;
-    /* text-info */
+    /*-- text-info --*/
 }

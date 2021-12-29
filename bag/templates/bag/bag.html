@@ -31,7 +31,11 @@
                         <!--- Product Image --->
                         <td class="p-3 w-25">
                             <a href="{% url 'product_detail' item.product.id %}">
-                                <img src="{{ item.product.image1.url }}" alt="{{ product.name }}" class="img-fluid">
+                                {% if item.product.image1 %}
+                                <img class="w-100" src="{{ item.product.image1.url }}" alt="{{ item.product.name }}">
+                                {% else %}
+                                <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                {% endif %}
                             </a>
                         </td>
                         <!--- Product Name --->

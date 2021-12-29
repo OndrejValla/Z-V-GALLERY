@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!--- Checkout Form by Code Institute --->
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 text-center mt-3">
+            <h2 class="mb-2">Product Management</h2>
+            <hr class="w-50">
+            <h5 class="text-muted">Edit a Product</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-3"
+                enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="text-center">
+                    <a href="{% url 'products' %}" class="btn btn-outline-dark">Cancel</a>
+                    <button class="btn btn-success" type="submit">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

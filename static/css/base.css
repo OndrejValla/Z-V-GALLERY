@@ -96,9 +96,15 @@ body {
 #artist-image {
     min-height: 550px;
     background: url(/media/zuzu-valla-about.jpg);
-    background-position: 50% 15%;
+    background-position: 0% 15%;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+@media (max-width: 992px) {
+    #artist-image {
+        background-position: 50% 15%;
+    }
 }
 
 .art-series-row {

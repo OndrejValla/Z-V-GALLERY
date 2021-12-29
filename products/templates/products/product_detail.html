@@ -54,8 +54,16 @@
     </div>
 
     <div class="row text-center">
+        {% if request.user.is_superuser %}
+        <div class="col-6 offset-3">
+            <small>
+                <a class="mb-2 text-warning" href="{% url 'edit_product' product.id %}">Edit</a> |
+                <a class="mb-2 text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+            </small>
+        </div>
+        {% endif %}
         <div class="col-12 mb-3">
-            <hr class="w-50 mb-1">
+            <hr class="w-50">
             <p class="lead font-weight-bold">${{ product.price }}</p>
         </div>
         <div class="col-12 mb-3">

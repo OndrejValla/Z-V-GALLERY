@@ -1,1 +1,1 @@
-web: gunicorn z-v-gallery.wsgi:application
+web: gunicorn z_v_gallery.wsgi.application

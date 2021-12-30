@@ -49,6 +49,7 @@ class StripeWH_Handler:
         intent = event.data.object
         pid = intent.id
         bag = intent.metadata.bag
+        print(intent.metadata)
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
@@ -66,8 +67,6 @@ class StripeWH_Handler:
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
-                profile.default_full_name = shipping_details.full_name
-                profile.default_email = shipping_details.email
                 profile.default_phone_number = shipping_details.phone
                 profile.default_country = shipping_details.address.country
                 profile.default_postcode = shipping_details.address.postal_code

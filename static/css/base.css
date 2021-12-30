@@ -95,7 +95,7 @@ body {
 
 #artist-image {
     min-height: 550px;
-    background: url(/media/zuzu-valla-about.jpg);
+    background: url(/media/zuzu-valla-about.jpg) no-repeat center center;
     background-position: 0% 15%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -109,7 +109,7 @@ body {
 
 .art-series-row {
     /*-- IMG FROM WWW.TEAHUB.IO --*/
-    background: url(/media/art-series-background.jpg);
+    background: url(/media/art-series-background.jpg) no-repeat center center;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: auto;
@@ -126,6 +126,14 @@ body {
     .art-series-h1 {
         font-size: 30px;
     }
+}
+
+#art-series-div-1 {
+    height: 200px;
+    background: url(/media/in-the-bath-series.jpg) no-repeat center center;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /*-- Info messages --*/

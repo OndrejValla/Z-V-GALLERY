@@ -1,6 +1,7 @@
 Dear {{ order.full_name }}!
 
-This is a confirmation email for your order at ZV Gallery. 
+This is a confirmation email for your order.
+Thank You for shopping at ZV Gallery. 
 Please find your order information is below:
 
 Order Number: {{ order.order_number }}
@@ -10,14 +11,21 @@ Order Total: ${{ order.order_total }}
 Delivery: ${{ order.delivery_cost }}
 Grand Total: ${{ order.grand_total }}
 
-Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+Your order will be shipped to: 
+{{ order.street_address1 }}
+{{ order.town_or_city }},
+{{ order.country }}
 
-We've got your phone number on file as {{ order.phone_number }}.
+We've got your phone number on file as
+{{ order.phone_number }}.
 
-If you have any questions, feel free to contact us at {{ contact_email }}.
+If you have any questions, feel free to contact us at
+{{ contact_email }}.
 
 Thank you for your order!
 
 Sincerely,
 
-Zuzu Valla and the Team of ZV Gallery.
+Zuzu Valla
+
+With the Team of ZV Gallery.

@@ -118,6 +118,30 @@ body {
     border: 2px solid rgba(0, 0, 0, .1);
 }
 
+#art-series-div-1 {
+    height: 33vh;
+    background: url(/media/in-the-bath-series.jpg) no-repeat center center;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#art-series-div-2 {
+    height: 33vh;
+    background: url(/media/in-the-bath-series.jpg) no-repeat center center;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#art-series-div-3 {
+    height: 33vh;
+    background: url(/media/in-the-bath-series.jpg) no-repeat center center;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .card-info {
     margin-bottom: 15px;
 }
@@ -126,14 +150,6 @@ body {
     .art-series-h1 {
         font-size: 30px;
     }
-}
-
-#art-series-div-1 {
-    height: 200px;
-    background: url(/media/in-the-bath-series.jpg) no-repeat center center;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 /*-- Info messages --*/

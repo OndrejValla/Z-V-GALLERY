@@ -27,30 +27,30 @@
         </div>
     </div>
 
-    {% if product.image1 %}
     <div class="row text-center">
         <div class="col-12 col-lg-4 mb-5 mt-5">
+            {% if product.image2 %}
             <a href="{{ product.image2.url }}" target="_blank">
                 <img class="col-lg-10 col-sm-8" src="{{ product.image2.url }}" alt="{{ product.name }}">
             </a>
+            {% endif %}
         </div>
         <div class="col-12 col-lg-4 mb-5 mt-5">
+            {% if product.image1 %}
             <a href="{{ product.image1.url }}" target="_blank">
                 <img class="col-lg-10 col-sm-8" src="{{ product.image1.url }}" alt="{{ product.name }}">
             </a>
+            {% else %}
+            <img class="col-lg-10 col-sm-8" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+            {% endif %}
         </div>
         <div class="col-12 col-lg-4 mb-5 mt-5">
+            {% if product.image3 %}
             <a href="{{ product.image3.url }}" target="_blank">
                 <img class="col-lg-10 col-sm-8" src="{{ product.image3.url }}" alt="{{ product.name }}">
             </a>
+            {% endif %}
         </div>
-    </div>
-    {% else %}
-    <div class="row text-center mb-5 mt-5">
-        <div class="col-4 offset-4 mb-3">
-            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-        </div>
-        {% endif %}
     </div>
 
     <div class="row text-center">

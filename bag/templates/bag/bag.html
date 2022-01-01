@@ -3,7 +3,7 @@
 {% load bag_tools %}
 
 {% block content %}
-<div class="container mb-3">
+<div class="container mb-5">
     <div class="row">
         <div class="col text-center mt-3">
             <h2 class="mb-2">Shopping Bag</h2>
@@ -119,11 +119,11 @@
             </div>
             {% else %}
             <h5 class="mb-5">Your shopping bag is empty!</h5>
-            <a href="{% url 'products' %}" class="btn btn-outline-dark mt-3">
+            <a href="{% url 'products' %}" class="btn btn-outline-dark mt-3 empty-bag-css">
                 <span class="icon">
                     <i class="fas fa-long-arrow-alt-left"></i>
                 </span>
-                <span class="text-uppercase">Back to the Shop</span>
+                <span class="text-uppercase empty-bag-css">Back to the Shop</span>
             </a>
             {% endif %}
         </div>

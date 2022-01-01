@@ -10,16 +10,17 @@ body {
 }
 
 #topnav {
-    position: fixed;
-    top: 0;
     height: 180px;
-    width: 100%;
     /*-- IMG FROM WWW.TEAHUB.IO --*/
     background: url(/media/top-white-background.jpg);
     background-repeat: repeat;
     background-position: 98% 31%;
     border-bottom: 2px solid rgba(255, 255, 255, 0.979);
-    z-index: 10;
+}
+
+.accounts-container {
+    margin-top: 10vh;
+    margin-bottom: 50vh;
 }
 
 .main-logo {
@@ -36,12 +37,10 @@ body {
 }
 
 #home-page-menu {
-    position: relative;
     height: 650px;
     position: relative;
     background: url(/media/home-page-menu-background.jpg) no-repeat center center;
     background-size: cover;
-    margin-top: 120px;
 }
 
 .home-page-button {
@@ -179,6 +178,10 @@ body {
     overflow-y: auto;
 }
 
+.empty-bag-css {
+    margin-bottom: 35vh;
+}
+
 /*-- Shopping Bag - CSS from Boutique Ado --*/
 .update-link,
 .remove-item {
@@ -272,7 +275,7 @@ body {
 @media (max-width: 650px) {
     .to-top-button {
         position: fixed;
-        bottom: -7px;
+        bottom: 30px;
         right: -7px;
         padding-left: 40px;
     }
@@ -286,7 +289,7 @@ body {
     /*-- IMG FROM WWW.TEAHUB.IO --*/
     background: url(/media/top-white-background.jpg);
     background-repeat: repeat;
-    background-position: 98% 31%;
+    background-position: 95% 29%;
     font-size: 26px;
     padding: 5px;
     border-top: 2px solid rgba(179, 175, 194, 0.979);

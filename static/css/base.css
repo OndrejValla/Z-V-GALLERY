@@ -10,17 +10,23 @@ body {
 }
 
 #topnav {
+    position: fixed;
+    top: 0;
     height: 180px;
+    width: 100%;
     /*-- IMG FROM WWW.TEAHUB.IO --*/
     background: url(/media/top-white-background.jpg);
     background-repeat: repeat;
     background-position: 98% 31%;
     border-bottom: 2px solid rgba(255, 255, 255, 0.979);
+    z-index: 10;
 }
 
 .main-logo {
     height: 140px;
     width: 200px;
+    background: url(/media/zuzu-valla-logo.png) no-repeat center center;
+    background-size: cover;
     border: white;
     border-style: solid;
     border-width: 2px;
@@ -30,10 +36,12 @@ body {
 }
 
 #home-page-menu {
+    position: relative;
     height: 650px;
     position: relative;
     background: url(/media/home-page-menu-background.jpg) no-repeat center center;
     background-size: cover;
+    margin-top: 120px;
 }
 
 .home-page-button {
@@ -177,27 +185,6 @@ body {
     cursor: pointer;
 }
 
-/*-- products.html --*/
-.to-top-button {
-    height: 75px;
-    width: 75px;
-    color: gray;
-    font-size: xx-large;
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    cursor: pointer;
-}
-
-@media (max-width: 650px) {
-    .to-top-button {
-        position: fixed;
-        bottom: 0px;
-        right: 1px;
-        padding-left: 40px;
-    }
-}
-
 /*-- CSS by Code Institute from Boutique Ado project --*/
 .text-black {
     color: #000 !important;
@@ -215,7 +202,6 @@ body {
 }
 
 /*-- Allauth form formatting --*/
-
 .allauth-form-inner-content p {
     margin-top: 1.5rem;
     /* mt-4 */
@@ -269,4 +255,82 @@ body {
 .allauth-form-inner-content a {
     color: #17a2b8;
     /*-- text-info --*/
+}
+
+/*-- Back To The Top Button --*/
+.to-top-button {
+    height: 75px;
+    width: 75px;
+    color: gray;
+    font-size: xx-large;
+    position: fixed;
+    bottom: 3px;
+    right: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 650px) {
+    .to-top-button {
+        position: fixed;
+        bottom: -7px;
+        right: -7px;
+        padding-left: 40px;
+    }
+}
+
+/*-- Footer --*/
+.page-footer {
+    bottom: 0;
+    width: 100%;
+    height: 12vh;
+    /*-- IMG FROM WWW.TEAHUB.IO --*/
+    background: url(/media/top-white-background.jpg);
+    background-repeat: repeat;
+    background-position: 98% 31%;
+    font-size: 26px;
+    padding: 5px;
+    border-top: 2px solid rgba(179, 175, 194, 0.979);
+    z-index: 3;
+}
+
+.copyright-left {
+    font-size: 14px;
+}
+
+.social-footer {
+    list-style: none;
+    line-height: 28px;
+    margin: 0 20px;
+}
+
+.social-footer li {
+    display: inline;
+}
+
+.footer-socials {
+    color: rgb(63, 63, 63);
+    text-decoration: none;
+}
+
+.footer-socials:hover {
+    color: black;
+    text-decoration: none;
+}
+
+@media (max-width: 650px) {
+    .page-footer {
+        font-size: 18px;
+        height: 11vh;
+    }
+
+    .copyright-left {
+        font-size: 11px;
+        margin-top: 20px;
+        padding-top: 5px;
+    }
+
+    .social-footer {
+        list-style: none;
+        line-height: 35px;
+    }
 }

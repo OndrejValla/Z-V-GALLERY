@@ -65,7 +65,7 @@
             <!-- Logo Header -->
             <div class="col-6 my-auto py-1 py-lg-0 text-center">
                 <a href="{% url 'home' %}" class="main-logo-link">
-                    <img src="media/zuzu-valla-logo.png" class="main-logo" alt="zuzu-valla-logo">
+                    <button class="main-logo"></button>
                 </a>
             </div>
             <!-- Accounts & Basket -->
@@ -145,6 +145,44 @@
 
     {% block content %}
     {% endblock %}
+
+    <!-- Footer Section -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-4 mt-3 copyright-left">
+                    <span class="text-left">Copyright © 2022</span>
+                </div>
+                <div class="col-md-4 d-none d-lg-block d-xl-block">
+                </div>
+                <div class="col-6 col-md-4 text-right">
+                    <ul class="social-footer mt-3">
+                        <li>
+                            <a href="https://www.instagram.com/zuzu.valla" target="_blank" rel="noopener"
+                                aria-label="Find us on Instagram" class="footer-socials">
+                                <i class="fab fa-instagram" aria-hidden="true" title="Instagram"></i>
+                            </a>
+                            <span class="sr-only">Find us on Instagram</span>
+                        </li>
+                        <li>
+                            <a href="https://uk.linkedin.com/in/zuzu-valla-a9a546153" target="_blank" rel="noopener"
+                                aria-label="Find us on Linkedin" class="footer-socials">
+                                <i class="fab fa-linkedin" aria-hidden="true" title="Linkedin"></i>
+                            </a>
+                            <span class="sr-only">Find us on Linkedin</span>
+                        </li>
+                        <li>
+                            <a href="https://github.com/OndrejValla/Z-V-GALLERY" target="_blank" rel="noopener"
+                                aria-label="See this page on the GitHub" class="footer-socials">
+                                <i class="fab fa-github" aria-hidden="true" title="GitHub"></i>
+                            </a>
+                            <span class="sr-only">See this page on GitHub</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     {% block postloadjs %}
     <script type="text/javascript">

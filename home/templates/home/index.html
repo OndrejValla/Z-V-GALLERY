@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- Home Page Menu -->
+<div id="home-page-menu" class="container pt-4 mb-5">
+    <div id="color-overlay"></div>
+    <div class="row justify-content-center align-content-center ">
+        <a href="#home-artist" class="col-10 col-sm-6 home-page-button btn">Artist Info</a>
+    </div>
+    <div class="row justify-content-center align-content-center ">
+        <a href="#home-art-series" class="col-10 col-sm-6 home-page-button btn">Art Series</a>
+    </div>
+    <div class="row justify-content-center align-content-center">
+        <a href="" class="col-10 col-sm-6 home-page-button btn">Button</a>
+    </div>
+    <div class="row justify-content-center align-content-center">
+        <a href="" class="col-10 col-sm-6 home-page-button btn">Button</a>
+    </div>
+    <div class="row justify-content-center align-content-center ">
+        <a href="{% url 'products' %}" class="col-10 col-sm-6 home-page-button btn">Shop</a>
+    </div>
+</div>
+<!-- Artist Info -->
+<a id="home-artist"></a>
+<div class="container mt-3 mb-5">
+    <div class="row">
+        <div id="artist-image" class="col-12 col-lg-5 text-center mb-3 mt-3">
+        </div>
+        <div class="col-12 col-lg-7 bg-white text-center about-zuzu">
+            <h2 class="mt-4">About</h2>
+            <hr class="w-50 mb-2">
+            <p class="artist-p mb-3">Zuzu Valla is Slovak photographer, currently living in the U.K.
+                <br> Zuzu is defining her very own and recognisable signature of the photography style by
+                exploring multiple layers of distinct human beauty.
+                <br>She was brought up in a traditional Slovak family,
+                growing up in the last years of strong communism regime and social transformation of
+                Slovakia.
+                <br>Zuzu’s grandfather was a keen amateur photographer shooting in black and white, while her
+                grandmother had been using special painting method to colour his photographs.
+                <br>Zuzu started her interest in photography almost by accident in her late 20s. After being
+                disappointed by using a mobile phone camera,
+                she reached for her first DSLR camera and has never looked back.
+                Photography had become her passion.
+                <br>Zuzu is excited about capturing the moments
+                where beauty, sadness and mystery come together,
+                creating her unique visual signature.
+            </p>
+            <a href="" class="btn btn-outline-dark mb-1">
+                <span class="text-uppercase">Contact</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Art Series -->
+<a id="home-art-series"></a>
+<div class="container mt-5 mb-5">
+    <div class="row mt-5 mb-2">
+        <div class="col-6 offset-3 text-center">
+            <h2 class="mt-4 art-series-h1">Art Series</h2>
+            <hr class="uderline-left mb-3">
+        </div>
+    </div>
+    <!-- Art Series Individual Cards -->
+    {% for project in projects %}
+    <div class="row art-series-row mt-4 mb-2">
+        <div class="col-12 col-lg-5">
+            <a href="{% url 'products' %}?project={{ project.name }}">
+                <div class="card-img card">
+                    {% if project.image %}
+                    <img class="card-img-top img-fluid" src="{{ project.image.url }}" alt="{{ project.name }}">
+                    {% else %}
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ project.name }}">
+                    {% endif %}
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-lg-7 text-center">
+            <div class="card-info card-body">
+                <h3 class="mb-0">{{ project.friendly_name }}</h3>
+            </div>
+            <div>
+                <a href="{% url 'products' %}?project={{ project.name }}" class="btn btn-outline-dark">
+                    <span class="text-uppercase">See Prints</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+</div>
+<!-- Gallery -->
+<div class="container mt-5 mb-5">
+    <div class="row mt-5 mb-2">
+        <div class="col-6 offset-3 text-center">
+            <h2 class="pl-4 mt-4">Gallery</h2>
+            <hr class="uderline-left mb-3">
+        </div>
+    </div>
+</div>
+<!-- Back to the Top button -->
+<div class="to-top-button">
+    <a class="to-top-button-link">
+        <i class="fas fa-angle-double-up" title="Back To Top"></i>
+    </a>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $('.to-top-button-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
+{% endblock %}

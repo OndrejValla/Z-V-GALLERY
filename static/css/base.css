@@ -9,6 +9,7 @@ body {
     font-family: 'Playfair Display', sans-serif;
 }
 
+/*-- Top Navigation Bar --*/
 #topnav {
     height: 180px;
     /*-- IMG FROM WWW.TEAHUB.IO --*/
@@ -36,6 +37,36 @@ body {
     border-collapse: collapse;
 }
 
+/*-- Info messages --*/
+.message-container {
+    position: absolute;
+    top: 120px;
+    right: 28px;
+    z-index: 10;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/*-- Shopping Bag --*/
+.shopping-bag-pop-out-window {
+    height: 120px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.empty-bag-css {
+    margin-bottom: 35vh;
+}
+
+/*-- Shopping Bag - CSS from Boutique Ado --*/
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+/*-- Home Page --*/
 #home-page-menu {
     height: 650px;
     position: relative;
@@ -100,6 +131,7 @@ body {
     opacity: 0.5;
 }
 
+/*-- About Artist --*/
 #artist-image {
     min-height: 550px;
     background: url(/media/zuzu-valla-about.jpg) no-repeat center center;
@@ -114,6 +146,7 @@ body {
     }
 }
 
+/*-- Art Series --*/
 .art-series-row {
     /*-- IMG FROM WWW.TEAHUB.IO --*/
     background: url(/media/art-series-background.jpg) no-repeat center center;
@@ -125,67 +158,43 @@ body {
     border: 2px solid rgba(0, 0, 0, .1);
 }
 
-#art-series-div-1 {
-    height: 33vh;
-    background: url(/media/in-the-bath-series.jpg) no-repeat center center;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#art-series-div-2 {
-    height: 33vh;
-    background: url(/media/in-the-bath-series.jpg) no-repeat center center;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#art-series-div-3 {
-    height: 33vh;
-    background: url(/media/in-the-bath-series.jpg) no-repeat center center;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .card-info {
     margin-bottom: 15px;
 }
 
 @media (max-width: 430px) {
     .art-series-h1 {
-        font-size: 30px;
+        font-size: 28px;
     }
 }
 
-/*-- Info messages --*/
-.message-container {
-    position: absolute;
-    top: 120px;
-    right: 28px;
-    z-index: 10;
+#home-gallery {
+    clear: both;
+    line-height: 0;
+    column-count: 5;
+    column-gap: 10px;
 }
 
-.toast-capper {
-    height: 2px;
+@media (min-width: 943px) {
+    #home-gallery img {
+        width: 100%;
+        margin-top: 10px;
+        transition: filter .5s ease-in-out;
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
 }
 
-/*-- Shopping Bag --*/
-.shopping-bag-pop-out-window {
-    height: 120px;
-    overflow-x: hidden;
-    overflow-y: auto;
+#home-gallery img:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
-.empty-bag-css {
-    margin-bottom: 35vh;
-}
-
-/*-- Shopping Bag - CSS from Boutique Ado --*/
-.update-link,
-.remove-item {
-    cursor: pointer;
+@media (max-width: 943px) {
+    #home-gallery {
+        column-count: 4;
+        column-gap: 10px;
+    }
 }
 
 /*-- CSS by Code Institute from Boutique Ado project --*/
@@ -267,9 +276,10 @@ body {
     color: gray;
     font-size: xx-large;
     position: fixed;
-    bottom: 3px;
+    bottom: 7vh;
     right: 5px;
     cursor: pointer;
+    z-index: 100;
 }
 
 @media (max-width: 650px) {
@@ -283,9 +293,10 @@ body {
 
 /*-- Footer --*/
 .page-footer {
+    position: relative;
     bottom: 0;
     width: 100%;
-    height: 12vh;
+    height: 9vh;
     /*-- IMG FROM WWW.TEAHUB.IO --*/
     background: url(/media/top-white-background.jpg);
     background-repeat: repeat;
@@ -323,7 +334,6 @@ body {
 @media (max-width: 650px) {
     .page-footer {
         font-size: 18px;
-        height: 11vh;
     }
 
     .copyright-left {

@@ -1,6 +1,6 @@
 Dear {{ full_name }},
 
-We have received your message regarding {{ subject }}. 
+{{ subject }}. 
 
 Your message is:
 {{ message }}

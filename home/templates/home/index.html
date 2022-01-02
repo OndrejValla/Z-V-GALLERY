@@ -58,12 +58,13 @@
     <div class="row mt-5 mb-2">
         <div class="col-6 offset-3 text-center">
             <h2 class="mt-4 art-series-h1">Art Series</h2>
-            <hr class="uderline-left mb-3">
+            <hr class="w-100 mb-2">
         </div>
     </div>
     <!-- Art Series Individual Cards -->
     {% for project in projects %}
     <div class="row art-series-row mt-4 mb-2">
+        {% if forloop.counter|divisibleby:2 %}
         <div class="col-12 col-lg-5">
             <a href="{% url 'products' %}?project={{ project.name }}">
                 <div class="card-img card">
@@ -76,8 +77,9 @@
             </a>
         </div>
         <div class="col-12 col-lg-7 text-center">
-            <div class="card-info card-body">
+            <div class="card-info card-body mb-5">
                 <h3 class="mb-0">{{ project.friendly_name }}</h3>
+                <hr class="w-50 mb-2">
             </div>
             <div>
                 <a href="{% url 'products' %}?project={{ project.name }}" class="btn btn-outline-dark">
@@ -85,18 +87,61 @@
                 </a>
             </div>
         </div>
+        {% else %}
+        <div class="col-12 col-lg-5 order-lg-last">
+            <a href="{% url 'products' %}?project={{ project.name }}">
+                <div class="card-img card">
+                    {% if project.image %}
+                    <img class="card-img-top img-fluid" src="{{ project.image.url }}" alt="{{ project.name }}">
+                    {% else %}
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ project.name }}">
+                    {% endif %}
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-lg-7 text-center">
+            <div class="card-info card-body mb-5">
+                <h3 class="mb-0">{{ project.friendly_name }}</h3>
+                <hr class="w-50 mb-2">
+            </div>
+            <div>
+                <a href="{% url 'products' %}?project={{ project.name }}" class="btn btn-outline-dark">
+                    <span class="text-uppercase">See Prints</span>
+                </a>
+            </div>
+        </div>
+        {% endif %}
     </div>
     {% endfor %}
-
-
-
 </div>
 <!-- Gallery -->
 <div class="container mt-5 mb-5">
     <div class="row mt-5 mb-2">
         <div class="col-6 offset-3 text-center">
             <h2 class="pl-4 mt-4">Gallery</h2>
-            <hr class="uderline-left mb-3">
+            <hr class="w-100 mb-2">
+        </div>
+    </div>
+    <div class="row">
+        <div id="home-gallery" class="col-12">
+            <img src="{{ MEDIA_URL }}home-gallery-1.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-7.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-4.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-5.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-3.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-9.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-11.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-12.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-13.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-15.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-16.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-17.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-18.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-19.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-20.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-21.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-22.png" alt="Image from Zuzu Valla's Gallery">
+            <img src="{{ MEDIA_URL }}home-gallery-23.png" alt="Image from Zuzu Valla's Gallery">
         </div>
     </div>
 </div>

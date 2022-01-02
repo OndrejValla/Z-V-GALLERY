@@ -185,6 +185,11 @@ body {
         column-count: 4;
         column-gap: 10px;
     }
+
+    #home-gallery img {
+        width: 25%;
+        margin-top: 3px;
+    }
 }
 
 /*-- CSS by Code Institute from Boutique Ado project --*/

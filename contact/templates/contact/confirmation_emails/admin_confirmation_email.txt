@@ -1,0 +1,10 @@
+Dear Admin,
+
+Customer {{ full_name }} has sent a message regarding {{ subject }}. 
+
+The message is:
+{{ message }}
+
+Please, contact the customer as soon as possible on {{ cust_email }} 
+
+Dakujeme

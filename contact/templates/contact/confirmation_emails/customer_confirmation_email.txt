@@ -1,0 +1,14 @@
+Dear {{ full_name }},
+
+We have received your message regarding {{ subject }}. 
+
+Your message is:
+{{ message }}
+
+We will get back to you as soon as possible.
+
+Kind regards,
+
+Zuzu Valla 
+
+and the team of Z-V-Gallery.

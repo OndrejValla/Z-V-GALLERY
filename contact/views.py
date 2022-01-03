@@ -29,13 +29,13 @@ def contact(request):
                                             'message': message,
                                         })
 
-                send_mail(
-                    subject,
-                    body,
-                    settings.DEFAULT_FROM_EMAIL,
-                    [cust_email],
-                    fail_silently=True,
-                )
+                # send_mail(
+                #     subject,
+                #     body,
+                #     settings.DEFAULT_FROM_EMAIL,
+                #     [cust_email],
+                #     fail_silently=True,
+                # )
 
                 # send message to admin
                 admin_mail = settings.DEFAULT_FROM_EMAIL
@@ -48,13 +48,13 @@ def contact(request):
                                             'cust_email': cust_email,
                                         })
 
-                send_mail(
-                    subject,
-                    body,
-                    settings.DEFAULT_FROM_EMAIL,
-                    [admin_mail],
-                    fail_silently=True,
-                )
+                # send_mail(
+                #     subject,
+                #     body,
+                #     settings.DEFAULT_FROM_EMAIL,
+                #     [admin_mail],
+                #     fail_silently=True,
+                # )
                 # save message to database
                 contact_form.save()
 

@@ -17,17 +17,17 @@ def contact(request):
             contact_form = ContactForm(request.POST)
             if contact_form.is_valid():
                 # Send email to customer
-                cust_email = request.POST['email']
-                full_name = request.POST['full_name']
-                message = request.POST['message']
-                subject = ('We have receiced your message with subject: ' +
-                        request.POST['subject'])
-                body = render_to_string('contact/confirmation_emails/' +
-                                        'customer_confirmation_email.txt',
-                                        {'full_name': full_name,
-                                            'subject': subject,
-                                            'message': message,
-                                        })
+                # cust_email = request.POST['email']
+                # full_name = request.POST['full_name']
+                # message = request.POST['message']
+                # subject = ('We have receiced your message with subject: ' +
+                #         request.POST['subject'])
+                # body = render_to_string('contact/confirmation_emails/' +
+                #                         'customer_confirmation_email.txt',
+                #                         {'full_name': full_name,
+                #                             'subject': subject,
+                #                             'message': message,
+                #                         })
 
                 # send_mail(
                 #     subject,
@@ -37,16 +37,16 @@ def contact(request):
                 #     fail_silently=True,
                 # )
 
-                # send message to admin
-                admin_mail = settings.DEFAULT_FROM_EMAIL
-                subject = contact_form.cleaned_data['subject']
-                body = render_to_string('contact/confirmation_emails/' +
-                                        'admin_confirmation_email.txt',
-                                        {'full_name': full_name,
-                                            'subject': subject,
-                                            'message': message,
-                                            'cust_email': cust_email,
-                                        })
+                # # send message to admin
+                # admin_mail = settings.DEFAULT_FROM_EMAIL
+                # subject = contact_form.cleaned_data['subject']
+                # body = render_to_string('contact/confirmation_emails/' +
+                #                         'admin_confirmation_email.txt',
+                #                         {'full_name': full_name,
+                #                             'subject': subject,
+                #                             'message': message,
+                #                             'cust_email': cust_email,
+                #                         })
 
                 # send_mail(
                 #     subject,

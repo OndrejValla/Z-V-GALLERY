@@ -3,6 +3,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
+from reviews.models import Review
+from reviews.forms import ReviewForm
+
 from .models import Product, Project
 from .forms import ProductForm
 
@@ -42,9 +45,13 @@ def product_detail(request, product_id):
     """ A view to show all products """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product)
+    review_form = ReviewForm()
 
     context = {
         'product': product,
+        'reviews': reviews,
+        'form': review_form,
     }
 
     return render(request, 'products/product_detail.html', context)

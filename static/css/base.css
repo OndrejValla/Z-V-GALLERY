@@ -180,14 +180,27 @@ body {
     margin-top: 10px;
 }
 
+@media (min-width: 944px) {
+    #home-gallery img {
+        width: 100%;
+        margin-top: 10px;
+        transition: filter .5s ease-in-out;
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
+
+    #home-gallery img:hover {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+}
+
 @media (max-width: 943px) {
     #home-gallery {
-        column-count: 4;
-        column-gap: 10px;
+        column-count: 3;
     }
 
     #home-gallery img {
-        width: 25%;
         margin-top: 3px;
     }
 }

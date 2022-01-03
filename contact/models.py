@@ -7,7 +7,7 @@ class Contact(models.Model):
         verbose_name_plural = 'Received messages'
 
     full_name = models.CharField(max_length=25, null=False, blank=False)
-    email = models.EmailField(max_length=25, null=False, blank=False)
+    email = models.EmailField(max_length=100, null=False, blank=False)
     subject = models.CharField(max_length=100, null=False, blank=False)
     message = models.TextField(max_length=1500, null=False, blank=False)
     date_sent = models.DateTimeField(auto_now_add=True)

@@ -14,8 +14,8 @@ def contact(request):
     if request.method == "POST":
 
         try:
-            # contact_form = ContactForm(request.POST)
-            # if contact_form.is_valid():
+            contact_form = ContactForm(request.POST)
+            if contact_form.is_valid():
                 # Send email to customer
                 # cust_email = request.POST['email']
                 # full_name = request.POST['full_name']
@@ -61,11 +61,13 @@ def contact(request):
                 # messages.success(request, 'Your message was sent successfully!')
                 messages.success(request, 'test')
                 return redirect(reverse('contact'))
-            # else:
-                # messages.error(request, 'Failed to send message. \
-                    # Please ensure the form is valid.')
+            else:
+                messages.error(request, 'Failed to send message. \
+                    Please ensure the form is valid.')
+                return redirect(reverse('contact'))
         except Exception as e:
             messages.error(e.message)
+            return redirect(reverse('contact'))
     else:
         if request.user.is_authenticated:
             profile = UserProfile.objects.get(user=request.user)

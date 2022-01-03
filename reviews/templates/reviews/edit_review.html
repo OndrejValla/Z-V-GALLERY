@@ -8,16 +8,16 @@
 <div class="dark-overlay"></div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col">
-            <hr class="w-75 mx-auto">
-            <h1 class="display-4 text-center title">Edit your Review</h1>
-            <hr class="w-75 mx-auto">
+        <div class="col-12 col-md-6 offset-md-3 text-center mt-3">
+            <h2 class="mb-2">Reviews</h2>
+            <hr class="w-50">
+            <h5 class="text-muted mb-5">Edit a Review</h5>
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-6 mx-auto">
-            <div class="mb-5">
-                <h6 class="text-muted">To change your review, fill out the form below.</h6>
+        <div class="col-10 offset-1 col-lg-6 offset-lg-3 review-form mb-5">
+            <div class="mt-5 mb-1">
+                <h6 class="text-center">To change your review, fill out the form below.</h6>
                 <small class="text-muted"><i>* is a required field</i></small>
             </div>
             <form id="edit_review_form" action="{% url 'edit_review' review.id %}" method="POST" class="update-form">
@@ -25,11 +25,17 @@
                 {% for field in form %}
                 {{ field | as_crispy_field }}
                 {% endfor %}
-                <div class="d-flex justify-content-end gap-4 mb-3">
+                <div class="d-flex justify-content-between mb-3">
                     <a href="{% url 'product_detail' review.product.id %}"
-                        class="btn btn-outline-light rounded-0">Cancel
+                        class="btn btn-outline-dark text-uppercase mb-2">
+                        <span class="icon">
+                            <i class="fas fa-long-arrow-alt-left"></i>
+                        </span>
+                        <span class="text-uppercase">Back</span>
                     </a>
-                    <button class="btn btn-light rounded-0" type="submit">Edit Review</button>
+                    <button class="btn btn-success text-uppercase mb-2" type="submit">
+                        Save Review
+                    </button>
                 </div>
             </form>
         </div>

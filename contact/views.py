@@ -34,7 +34,7 @@ def contact(request):
                     body,
                     settings.DEFAULT_FROM_EMAIL,
                     [cust_email],
-                    fail_silently=False,
+                    fail_silently=True,
                 )
 
                 # send message to admin

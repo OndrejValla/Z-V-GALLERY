@@ -12,61 +12,56 @@ def contact(request):
     """ A view to return the contact page """
 
     if request.method == "POST":
+        contact_form = ContactForm(request.POST)
 
-        try:
-            contact_form = ContactForm(request.POST)
-            if contact_form.is_valid():
-                # Send email to customer
-                cust_email = request.POST['email']
-                full_name = request.POST['full_name']
-                message = request.POST['message']
-                subject = ('We have receiced your message with subject: ' +
-                        request.POST['subject'])
-                body = render_to_string('contact/confirmation_emails/' +
-                                        'customer_confirmation_email.txt',
-                                        {'full_name': full_name,
-                                            'subject': subject,
-                                            'message': message,
-                                        })
+        if contact_form.is_valid():
+            # Send email to customer
+            cust_email = request.POST['email']
+            full_name = request.POST['full_name']
+            message = request.POST['message']
+            subject = ('We have received your message with subject: ' +
+                    request.POST['subject'])
+            body = render_to_string('contact/confirmation_emails/' +
+                                    'customer_confirmation_email.txt',
+                                    {'full_name': full_name,
+                                        'subject': subject,
+                                        'message': message,
+                                    })
 
-                send_mail(
-                    subject,
-                    body,
-                    settings.DEFAULT_FROM_EMAIL,
-                    [cust_email],
-                    fail_silently=True,
-                )
+            send_mail(
+                subject,
+                body,
+                settings.DEFAULT_FROM_EMAIL,
+                [cust_email],
+                fail_silently=False,
+            )
 
-                # # send message to admin
-                admin_mail = settings.DEFAULT_FROM_EMAIL
-                subject = contact_form.cleaned_data['subject']
-                body = render_to_string('contact/confirmation_emails/' +
-                                        'admin_confirmation_email.txt',
-                                        {'full_name': full_name,
-                                            'subject': subject,
-                                            'message': message,
-                                            'cust_email': cust_email,
-                                        })
+            # # send message to admin
+            admin_mail = settings.DEFAULT_FROM_EMAIL
+            subject = contact_form.cleaned_data['subject']
+            body = render_to_string('contact/confirmation_emails/' +
+                                    'admin_confirmation_email.txt',
+                                    {'full_name': full_name,
+                                        'subject': subject,
+                                        'message': message,
+                                        'cust_email': cust_email,
+                                    })
 
-                send_mail(
-                    subject,
-                    body,
-                    settings.DEFAULT_FROM_EMAIL,
-                    [admin_mail],
-                    fail_silently=True,
-                )
-                # save message to database
-                contact_form.save()
+            send_mail(
+                subject,
+                body,
+                settings.DEFAULT_FROM_EMAIL,
+                [admin_mail],
+                fail_silently=False,
+            )
+            # save message to database
+            contact_form.save()
 
-                messages.success(request, 'Your message was sent successfully!')
-                return redirect(reverse('contact'))
-            else:
-                messages.error(request, 'Failed to send message. \
-                    Please ensure the form is valid.')
-                return redirect(reverse('contact'))
-        except Exception as e:
-            messages.error(e.message)
+            messages.success(request, 'Your message was sent successfully!')
             return redirect(reverse('contact'))
+        else:
+            messages.error(request, 'Failed to send message. \
+                Please ensure the form is valid.')
     else:
         if request.user.is_authenticated:
             profile = UserProfile.objects.get(user=request.user)

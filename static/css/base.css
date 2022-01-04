@@ -205,6 +205,17 @@ body {
     }
 }
 
+/*-- Reviews --*/
+.review-form,
+.review-card {
+    background: rgba(233, 230, 230, 0.777);
+    border: 2px solid rgba(186, 186, 189, 0.185);
+}
+
+.review-card-content {
+    background: rgba(251, 251, 251, 0.999);
+}
+
 /*-- CSS by Code Institute from Boutique Ado project --*/
 .text-black {
     color: #000 !important;

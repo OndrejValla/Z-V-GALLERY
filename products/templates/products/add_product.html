@@ -3,16 +3,20 @@
 
 {% block content %}
 <!--- Checkout Form by Code Institute --->
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-md-6 text-center mt-3">
+        <div class="col-12 col-md-6 offset-md-3 text-center mt-3">
             <h2 class="mb-2">Product Management</h2>
             <hr class="w-50">
-            <h5 class="text-muted">Add a Product</h5>
+            <h5 class="text-muted mb-5">Add a Product</h5>
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-6">
+        <div class="col-10 offset-1 col-lg-6 offset-lg-3 review-form mb-5">
+            <div class="mt-5 mb-1">
+                <h6 class="text-center">To Add new product, fill out the form below.</h6>
+                <small class="text-muted"><i>* is a required field</i></small>
+            </div>
             <form method="POST" action="{% url 'add_product' %}" class="form mb-3" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}

@@ -43,15 +43,16 @@
     <!-- Reviews Cards -->
     <div class="row">
         <div class="col text-center py-3">
-            <h4>Reviews</h4>
+            <h4>Reviews <span>({{ reviews.count }})</span></h4>
             <p class="text-muted"><i class="fas fa-star mr-1 text-warning"></i> {{ product.rating }} / 5
             </p>
         </div>
     </div>
     <div class="row">
         {% for review in reviews %}
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 mb-5">
             <div class="review-card h-100 p-2">
+                <hr>
                 {% if review.rating == 1 %}
                 <p class="my-auto"><i class="fas fa-star text-warning"></i><i class="far fa-star"></i><i
                         class="far fa-star"></i>

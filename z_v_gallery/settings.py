@@ -125,10 +125,12 @@ WSGI_APPLICATION = 'z_v_gallery.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
+    print("Loading postgress db....")
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
+    print("Loading local db... ")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',

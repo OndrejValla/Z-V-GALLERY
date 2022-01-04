@@ -35,6 +35,7 @@ body {
     border-radius: 50%;
     box-shadow: rgba(245, 240, 240, 0.9) 0 0 75px;
     border-collapse: collapse;
+    z-index: 10;
 }
 
 /*-- Info messages --*/
@@ -168,41 +169,11 @@ body {
     }
 }
 
-#home-gallery {
-    clear: both;
-    line-height: 0;
-    column-count: 5;
-    column-gap: 10px;
-}
-
-#home-gallery img {
+/*-- Gallery --*/
+.home-gallery img {
     width: 100%;
+    display: inline-block;
     margin-top: 10px;
-}
-
-@media (min-width: 944px) {
-    #home-gallery img {
-        width: 100%;
-        margin-top: 10px;
-        transition: filter .5s ease-in-out;
-        -webkit-filter: grayscale(0%);
-        filter: grayscale(0%);
-    }
-
-    #home-gallery img:hover {
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
-    }
-}
-
-@media (max-width: 943px) {
-    #home-gallery {
-        column-count: 3;
-    }
-
-    #home-gallery img {
-        margin-top: 3px;
-    }
 }
 
 /*-- Reviews --*/

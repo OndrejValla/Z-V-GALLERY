@@ -145,3 +145,17 @@
         {% endfor %}
     </div>
 </div>
+<!-- Back to the Top button -->
+<div class="to-top-button">
+    <a class="to-top-button-link">
+        <i class="fas fa-angle-double-up" title="Back to the Top"></i>
+    </a>
+</div>
+
+{% block postloadjs %}
+<script type="text/javascript">
+    $('.to-top-button-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
+{% endblock %}

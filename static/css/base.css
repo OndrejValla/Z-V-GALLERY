@@ -94,6 +94,14 @@ body {
     .home-page-button {
         margin-top: 10%;
     }
+
+    #gallery-btn {
+        visibility: hidden;
+    }
+
+    #home-page-menu {
+        padding-top: 15px !important;
+    }
 }
 
 @media (min-width: 767px) {
@@ -170,20 +178,17 @@ body {
 /*-- Gallery --*/
 .home-gallery img {
     width: 100%;
-    display: inline-block !important;
     margin-top: 25px;
-    object-fit: cover;
+    transition: filter .5s ease-in-out;
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
 }
 
-@media (max-width: 767px) {
-    .home-gallery img {
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-        max-width: 100vw;
-        max-height: 100vh;
-    }
+.home-gallery img:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
+
 
 /*-- Reviews --*/
 .review-form,

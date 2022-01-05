@@ -175,6 +175,16 @@ body {
     object-fit: cover;
 }
 
+@media (max-width: 767px) {
+    .home-gallery img {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+}
+
 /*-- Reviews --*/
 .review-form,
 .review-card {

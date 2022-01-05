@@ -27,13 +27,13 @@ body {
 .main-logo {
     height: 140px;
     width: 200px;
-    background: url(/media/zuzu-valla-logo.png) no-repeat center center;
-    background-size: cover;
+    background: url(/media/zuzu-valla-logo.jpg);
+    background-size: cover !important;
     border: white;
     border-style: solid;
     border-width: 2px;
     border-radius: 50%;
-    z-index: 10;
+    z-index: 999;
 }
 
 /*-- Info messages --*/
@@ -83,7 +83,7 @@ body {
     border: 3px solid black;
     cursor: pointer;
     overflow: auto;
-    margin-top: 5%;
+    margin-top: 10%;
 }
 
 .home-page-button:hover {
@@ -92,33 +92,29 @@ body {
 
 @media (max-width: 767px) {
     .home-page-button {
-        margin-top: 10%;
-    }
-
-    #gallery-btn {
-        visibility: hidden;
+        margin-top: 12%;
     }
 
     #home-page-menu {
-        padding-top: 15px !important;
+        padding-top: 5vh !important;
     }
 }
 
 @media (min-width: 767px) {
     .home-page-button {
-        margin-top: 5%;
+        margin-top: 8%;
     }
 }
 
 @media (min-width: 1500px) {
     .home-page-button {
-        margin-top: 4%;
+        margin-top: 5%;
     }
 }
 
 @media (min-width: 2000px) {
     .home-page-button {
-        margin-top: 3%;
+        margin-top: 4%;
     }
 }
 
@@ -319,6 +315,7 @@ body {
     list-style: none;
     line-height: 28px;
     margin: 0 20px;
+    z-index: 3;
 }
 
 .social-footer li {

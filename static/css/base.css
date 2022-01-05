@@ -170,9 +170,10 @@ body {
 /*-- Gallery --*/
 .home-gallery img {
     width: 100%;
-    display: inline-block;
+    display: block !important;
     margin-top: 25px;
     object-fit: cover;
+    padding: 5px;
 }
 
 /*-- Reviews --*/

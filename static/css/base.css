@@ -71,6 +71,7 @@ body {
     position: relative;
     background: url(/media/home-page-menu-background.jpg) no-repeat center center;
     background-size: cover;
+    padding-top: 5vh !important;
 }
 
 .home-page-button {
@@ -96,7 +97,7 @@ body {
     }
 
     #home-page-menu {
-        padding-top: 5vh !important;
+        padding-top: 11vh !important;
     }
 }
 
@@ -285,7 +286,7 @@ body {
 @media (max-width: 650px) {
     .to-top-button {
         position: fixed;
-        bottom: 30px;
+        bottom: 45px;
         right: -7px;
         padding-left: 40px;
     }

@@ -37,8 +37,6 @@ def all_products(request):
         'search_term' : query,
         'current_projects': projects,
     }
-    # Aiming to keep products ordered by the project
-    ordering = ('project',)
 
     return render(request, 'products/products.html', context)
 

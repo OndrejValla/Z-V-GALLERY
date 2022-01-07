@@ -12,7 +12,7 @@ class ProductForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         projects = Project.objects.all()
-        names = [(p.id, p.get_name()) for p in projects]
+        names = [(p.id, p.__str__()) for p in projects]
 
         self.fields['project'].choices = names
         for field_name, field in self.fields.items():

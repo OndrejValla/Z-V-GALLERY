@@ -10,6 +10,7 @@ Created by Ondrej Valla
 ---
 The Z-V-Gallery (Zuzu Valla Gallery) website is my fourth ‘Milestone Project’ as part of the Full Stack Development course of Code Institute. The focus lies on using the Django framework, using an authorisation and authentication system and using Stripe payment system. I believe this website could be a fundation for the real online store, selling printed portraits of Zuzu Valla's work in the future.
 
+---
 ## * PLEASE NOTE! *
 
 ### This website is for educational purposes only. 
@@ -171,7 +172,7 @@ The information provided should be easily visible for the user:
 ### **Pages**
 #### **Frontend**
 
-The website has 12 pages. Each page has a header with the logo linked to the Home page, and a footer.
+The website has 12 main content / pages plus account registration / login pages. Each page has a header with the logo linked to the Home page, and a footer.
 The links in the header are shown depending on whether a user is logged in or not and if the user is the admin or not.
 When a user is not registered nor logged in, the register and login links are shown in My Account section.
 When a user is logged in, the register and login links are hidden and a profile link and logout link are shown in My Account section.
@@ -205,7 +206,179 @@ This page is only displayed as a part of the product details page. This page con
 For the user who wrote the review, there is an option to edit, or delete the review.
 
 
+- **The contact page:**
+This page has a contact form, where the user can ask questions or give remarks. 
+A confirmation email is sent to the user’s email address after submitting.
+
+
+- **The sign up page:**  
+This page has a signup form where the user can register and create an account. After registration 
+the user is asked to confirm their email address. After confirmation the user is redirected to the
+home page. There is a button to go to the login page, if a user already has an account.
+
+
+- **The sign in page:**  
+This page has a login form where users that have an account can login. After login the user will be 
+redirected to the home page. There is a button to the register page, in case the user has no account.
+
+
+- **The profile page:**  
+This is the personal page of the user. Here the user can see and edit their shipping information, 
+see an overview of their orders (with a link to that order confirmation page).
+
+
+- **The product management page:**  
+On this page, the admin can add a new print / product by filling in the form. After submitting the admin 
+is redirected to the individual page of the added print / product.
+
+- **The edit product page:**  
+On this page, the admin can edit an existing print / product by editing the pre filled form. After submitting the admin is redirected to the individual page of the added print / product.
+
+
 - **The shopping bag page:**
 If the shopping bag is empty, the user is informed by the text, saying the shopping bag is empty and the Keep shopping button.
 When there are items in the bag, the user is able to see the table with product informations such as: Product image, name, price, whether or not framed, quantity with the update/remove option and subtotal.
 On the bottom of the page, there is bag total sum, delivery charge, grand total sum, keep shopping button and secure checkout button.
+
+
+- **The checkout page:**  
+This page has an form the user has to fill out to complete their order. The user has to provide delivery information and credit card details. After submitting the form, the user gets a confirmation email.
+There is also an order summary view, showing all items in the bag, subtotals and grand total including delivery charges.
+
+
+- **The checkout success page:**  
+This page is shown when the payment was successfull. It has an overview of the order, delivery details and payment details.
+
+#### **Backend**
+During development the Sqlite3 database is used. This is the default database used by Django.
+During production HerokuPostgres is used in conjunction with deployment on Heroku.
+
+---
+### **The Chart of the database models**
+![Preview Image](media/readme-files/database-diagram.png)
+
+---
+
+### **Images Used**
+
+Website's Header and Footer background image is downloaded from:
+[www.teahub.io](https://www.teahub.io/viewwp/iTTm_1920x1080-white-abstract-wallpaper-desktop-background-abstract-white/)
+
+All other images used on this website are own by my wife, Zuzana Valla a.k.a. Zuzu Valla.
+
+### **Colors**
+
+The website's color theme is MOSTLY White with the combination of different shades of Grey color and texts are black or "text-dark" Bootstrap class.
+
+![Preview Image](media/readme-files/color-pallete.png)
+
+- rgba(0, 0, 0,) black is mostly used for text color, a part of text with the Bootstrap class of "text-dark".
+- rgba(255, 255, 255,) white is used accross the page to create nice, clean gallery style background.
+- rgba(181, 181, 181,) shade of gray is used for border colors.
+- rgba(233, 230, 230,) used for review cards and hovers
+- Image from www.teahub.com is used
+- The standard colours of Bootstrap for success, info, danger and warning were also used.
+
+
+### **Typography**
+For the headings (h1 to h6) and paragraphs I've used 'Playfair Display' fonts and sans-serif fonts as a backup.
+![Preview Image](media/readme-files/fonts-example.png)
+
+
+### **Icons**
+
+- To achieve better appearance and user experience, Font Awesome icons are used in this website.
+- The source: [Font Awesome](https://fontawesome.com/)
+
+---
+
+# Wireframes
+
+The final appearance of the website vary from original wireframes, however, the main structure / idea has been followed.
+
+- [Wireframes for Home Page PC](media/readme-files/wireframes/home-page-pc.png)
+- [Wireframes for Home Page Mobile](media/readme-files/wireframes/home-page-mobile.png)
+- [Wireframes for Home Page Tablet](media/readme-files/wireframes/home-page-tablet.png)
+- [Wireframes for Art series section home page PC](media/readme-files/wireframes/art-series-section-pc.png)
+- [Wireframes for Art series section home page Mobile](media/readme-files/wireframes/art-series-section-mobile.png)
+- [Wireframes for Art series section home page Tablet](media/readme-files/wireframes/art-series-section-tablet.png)
+- [Wireframes for Product Details PC](media/readme-files/wireframes/product-details-pc.png)
+- [Wireframes for Product Details Mobile](media/readme-files/wireframes/product-details-mobile.png)
+- [Wireframes for Product Details Tablet](media/readme-files/wireframes/product-details-tablet.png)
+
+---
+
+
+# Features
+
+- **Responsiveness** on all viewports, which allows users to use the website probably on all devices.
+- **Burger menu**, which allows users to easily navigate the website on devices below 992px. This menu creates a cleaner and more organised look for smaller screen devices.
+- **Search bar**, which allows users to search prints, by entering a keyword into the search bar.
+- **View by project** will display only prints of selected project.
+- **Contact form** is a great feature for users to get in touch with the owner of the website.
+- **Delete modal** as a defensive programming tool, which allows users to double confirm to delete their review.
+- **Register functionality**, which allows users to create an account, by filling in the register form. 
+- **Login functionality**, which allows users to log in their account, by filling in the login form. 
+- **Logout functionality**, which allows users to log out of their account, by clicking the logout button.
+- **Stripe functionality**, which simulates a safe enviroment for payments by credit card.
+
+- **CRUD functionality (Create, Read, Update, Delete) functionality:**
+
+    *Create:*  
+    - Admin can create / add new prints / products.  
+    - Users can create a review for a print / product.
+
+    *Read:*  
+    - All users can search and view prints / products.
+
+    *Update:*
+    - Admin can edit prints / products.  
+    - Users can edit their own review.
+
+    *Delete:*
+    - Admin can delete prints / products.  
+    - Users can delete their own review.
+
+
+
+## Features left to implement
+
+- Register and Login by using Social media account.
+- Sign up for the Newsletter feature.
+- Add the your favorite prints to the Favourite / Wishlist list displayed on profile page.
+- Functional setup of Stripe, to make the payment gate fully functional.
+
+---
+
+
+# Used Technologies
+
+### **Languages used**  
+- [HTML5](https://en.wikipedia.org/wiki/HTML) for markup.  
+- [CSS](https://en.wikipedia.org/wiki/CSS) for styling.
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript) for interactivity.
+- [Python3](https://www.python.org/) for backend programming.
+
+### **Frameworks and libraries used**   
+- [Bootstrap v4.4.1](https://getbootstrap.com/) a frontend-framework with precoded code-snippets, like navigation bar, modals, and to help with the responsiveness of the website.
+- [jQuery](https://jquery.com/), a javascript library for easier DOM traversing and manipulation and shortening of javascript. 	
+- [Google fonts](https://fonts.google.com/) for the fonts used on the website. 
+- [Font Awesome](https://fontawesome.com/) for the icons used on the website. 
+- [Django](https://www.djangoproject.com/) is a high-level Python web framework that encourages rapid development and clean, pragmatic design. 
+
+### **Tools and Programmes used**
+- [Balsamiq](https://balsamiq.com/) for making the wireframes. 
+- [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+ to debug and checking/testing the website.
+- [Git](https://git-scm.com/) for version control.  
+- [GitHub](https://github.com/) for storing the files and version control of the website.  
+- [PostgreSQL](https://www.postgresql.org/) used as an open source relational cloud database after development to Heroku.
+- [Amazon AWS](https://aws.amazon.com/) used to store static files after deployment.
+- [Heroku](https://www.heroku.com/) a cloud platform for deploying the website.
+- [W3C Markup Validation Service](https://validator.w3.org/) to check for markup validity.
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to check the CSS-code.
+- [JSHint](https://jshint.com/) to check the Javascript code.
+- [PEP8 checker](http://pep8online.com/) to check the python code for PEP8 requirements. 
+- [Favicon.io/](https://favicon.io/) to create the favicon for the website.
+- [Coolors](https://coolors.co/) to make the colour scheme.
+- [quickdatabasediagrams.com](https://quickdatabasediagrams.com) to create the database diagram.

@@ -384,3 +384,455 @@ The final appearance of the website vary from original wireframes, however, the 
 - [quickdatabasediagrams.com](https://quickdatabasediagrams.com) to create the database diagram.
 
 
+---
+# Deployment
+Heroku is used to deploy this application, as GitHub can only deploy static websites.
+
+The GitHub repository is linked to the Heroku App via automatic deployment.
+Every time commits and pushes are sent to GitHub, the Heroku App starts deploying the site.
+
+    git add .
+    git commit -m "commit message"
+    git push
+
+
+## **To deploy to Heroku**
+
+1. **Create a Heroku App**
+    1. Create a new app by clicking the ‘New’ button in [Heroku Dashboard](https://dashboard.heroku.com/apps)
+    2. Give it a unique name and set region to your nearest region.
+    3. Click ‘Create App’ in right top corner.
+    4. Click on the 'Resources' tab and in Add-ons type: postgress, then select 'Heroku Postgres'. 
+    5. For the subscription plan, choose the free plan and click submit form.
+
+2. **Setup the Postgres Database**
+    1. In your workspace install dj_database_url and psycopg2:   
+        ```
+        pip3 install dj_database_url
+        ```
+        and
+        ```
+        pip3 install psycopg2-binary
+        ```
+    2. Create a requirements file.  
+        ```
+        pip3 freeze > requirements.txt
+        ```
+    3. Import dj_database_url in **settings.py**.
+        ```
+        import dj_database_url
+        ```
+
+    4. Backup the database if you're using a local database instead of fixtures.  
+        ```
+        python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
+        ```
+        PLEASE make sure you're connected to your mysql database at this stage.  
+    5.  In Settings.py scroll down to DATABASES, comment out the default configuration and add the database url from Heroku   
+        ```
+        DATABASES = {
+                'default': dj_database_url.parse('DATABASE_URL')
+        }
+        ```
+        You can add the database url from Heroku's Config Vars in the Settings tab. 
+        PLEASE MAKE SURE THAT you dont commit and push The DATABASE_URL from Heroku.
+    6. Run migrations.  
+          ```
+          python3 manage.py migrate
+          ```
+    7. If you are using a local database type:  
+        ```
+        python3 manage.py loaddata db.json
+        ```  
+        to import the data from the mySQL database to Postgres.
+    8. If You Are using fixtures do as following:
+
+        First import the categories:  
+        ```
+        python3 manage.py loaddata categories
+        ```  
+        And then the products:  
+        ```
+        python3 manage.py loaddata products
+
+        ```  
+
+3. **Create a superuser**
+
+    - Use command: `python3 manage.py createsuperuser` 
+    - Create a username and password.
+
+4. **Set up local and remote database in settings.py**  
+    In **settings.py** :
+    ```
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+    ```
+    Therefore, when the app is running on Heroku it connects to Postgres(remote database). Otherwise, when running locally on GitPod it will connects to MYSQL(local database).
+
+5. **Install gunicorn**  
+    Once the app is deployed to Heroku, Gunicorn will replace the development server and will act as the web server.  
+    - Use command: `pip3 install gunicorn`
+
+6. **Create a Heroku 'Procfile'**  
+    The Procfile is the file that let Heroku know which file runs the app and how to run the app.
+    1. In the terminal type: `touch Procfile` to create 'Procfile'.
+    2. Inside the Procfile type:   
+    ```
+    web: gunicorn <Github yourappname>.wsgi:application
+    ```
+
+7. **Connect to Heroku in the terminal**
+    1. Login to your account on the Heroku website.
+    2. Go to account settings (click on your avatar).
+    3. Scroll down to the API Key section.
+    4. Click 'Reveal' and copy your API Key.
+    5. Login to Heroku via the Command line  
+        ```
+        heroku login -i
+        ```
+    6. Login with your email but use the API Key as the password.
+    7. Temporarily disable the collection of static files until AWS has been setup.  
+        ```
+        heroku config:set DISABLE_COLLECTSTATIC=1 --app <Heroku appname>
+        ```  
+    8. Add the hostnames to allowed hosts in `settings.py`.  
+        ```
+        ALLOWED_HOSTS = ['<heroku appname>.herokuapp.com', 'localhost']
+
+        ```
+    9. Commit to GitHub.
+        ``` 
+        git add .
+        git commit -m "commit message"
+        git push
+        ``` 
+   10. Commit to Heroku. Make sure you have git remote initialized.  
+        ```
+        heroku git:remote -a <Heroku appname>
+        ```  
+        Push to Heroku.  
+        ```
+        git push heroku
+        ```
+
+8. **Setup automatic deployment from GitHub to Heroku.**  
+    1. In Heroku, click the Deploy tab.  
+    2. Under 'Deployment method', Click on 'Connect to GitHub'.
+    3. Under 'Connect to GitHub', enter the GitHub repository name and click ‘Search’. Find Your Repository and click 'Connect'.
+    4. Next click the ‘Enable Automatic Deploys’ button further down.
+
+
+---
+
+## **How To Set up Amazon AWS**
+    I highly recommend to check the official documentation of AWS to get more understanding.
+    [Create bucket overview](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
+
+    1. Create an account, and login to Amazon web services.
+    2. Search for S3 and select it.
+    3. Click Create a new bucket button.  
+    4. Give the bucket a unique name.
+    5. Select the region closest to you.
+    6. Uncheck block all public access box and acknowledge that the bucket will be public.
+    7. Click 'Create bucket'.  
+    8. Set basic settings
+        - Click on the bucket name.
+        - Click the 'Properties' tab.
+        - Scroll down to 'Static website hosting' and click 'Edit'
+        - Click 'Enable', Keep 'Host a static website' selected. Enter the default values for index and error document as shown in the example: index.html and error.html
+        - Click 'Save changes'.
+    9. Set permissions
+        - Click on the 'Permissions' tab.
+        - Scroll down to 'CORS' and click 'Edit'.
+        - Past the following configuration:
+
+```
+
+[
+    {
+        "AllowedHeaders": [
+            "Authorization"
+        ],
+        "AllowedMethods": [
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+]
+
+    - MAKE SURE YOU ARE FOLOWING JSON FORMAT!
+```
+    - Click 'Save changes'
+
+#### **Set Bucket Policy**
+        - In the Permissions tab scroll to Bucket Policy and click 'Edit'.
+        - NOTICE THE Bucket ARN, **You will need it in next steps**
+        - Click on 'Policy generator'  
+        - In the new window that opens select 'S3 bucket policy' as the 'Type of Policy'.
+        - Add * to 'Principal'.
+        - Select 'GetObject' in 'Actions'.
+        - Copy your ARN from the other tab and paste it in the ARN field.
+        - Click 'Add Statement'.
+        - Click 'Generate policy'.
+        - Copy the policy and paste it in the Bucket Policy of the first tab.
+        - Add '/*' to the end of the resource key.
+        - Click 'Save changes'.
+        - Scroll down to Access control list (ACL) and click 'Edit'.
+        - Select 'List' for Everyone (public access) and select 'I understand...' at the bottom.
+        - Click 'Save changes'.
+
+#### **Create AWS groups, policies and users**
+        - Search term  "Iam" via the main search bar and open it.
+
+        - To create a group:
+            - Click on 'Users groups' on the left.
+            - Click 'Create group' and enter a group name. E.G. manage-z-v-gallery
+            - Scroll down and click 'Create group'.
+
+        - To create the policy to access the bucket:
+            - Click on 'Policies' on the left.
+            - Click 'Create policy'.
+            - Click the JSON tab and then on 'Import managed policy'.
+            - Search for 'S3' in the pop up window and select 'AmazonS3FullAccess' and click 'Import'.  
+            - Copy your ARN from previous steps (Open S3 in a new tab, click the bucket name, Permission, Bucket policy - copy the ARN)
+            - Paste it in the 'Resource' field in the JSON tab.  
+            - Click 'Next: Tags', then 'Next: Review'.
+            - Give the policy a name and description.
+            - Click 'Create policy'.
+
+        - To attach the policy to the group:
+            - Click 'User groups' on the left.
+            - Click the group name.
+            - Click the 'Permissions' tab.
+            - Click 'Add permission', then click 'Attach Policies'.  
+            - Search for the policy that you created above, select it.
+            - Click 'Attach policy'.
+
+        - To create a user for the group:
+            - Click 'Users' on the left.
+            - Click 'Add user' and create a username.
+            - Select 'Access Key - Programmatic access' and click 'Next: Permissions'.
+            - Select the group you want to add the user to.
+            - Click 'Next: Tags', then 'Next: Review' and 'Create User'.
+            - Download the .csv file and save it well, since it contains this users access key and secret access key and can't be  downloaded again.
+
+#### **Connect Django to S3**
+
+    - To install boto3 and django-storages:
+
+```
+            pip3 install boto3  
+            pip3 install django-storages
+```
+
+    - Now update the requirements.txt file:
+
+```
+            pip3 freeze > requirements.txt
+```  
+
+
+    - Add storages to INSTALLED APPS in `settings.py`.
+    - Add the following settings to `settings.py`:
+
+
+```
+            if 'USE_AWS' in os.environ:
+                # Cache control
+                AWS_S3_OBJECT_PARAMETERS = {
+                    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+                    'CacheControl': 'max-age=94608000',
+                }
+                
+                # Bucket Config
+                AWS_STORAGE_BUCKET_NAME = '<bucket name>' eg. 'z-v-gallery'
+                AWS_S3_REGION_NAME = '<bucket region>' eg. 'eu-west-2'
+                AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID') 
+                AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY') 
+                AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+                # Static and media files
+                STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+                STATICFILES_LOCATION = 'static'
+                DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+                MEDIAFILES_LOCATION = 'media'
+
+                # Override static and media URLs in production
+                STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+                MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+  
+                Cache control' will tell the browser that it's okay to cache static files for a long time.  
+                Bucket Config' will tell Django which bucket it should be communicating with.  
+                Static and media files' will tell where to find static and media files.  
+                Override static and media URLs in production' will tell which url's to use in production.    
+```
+
+    - Go to Heroku and add these values to the Config Vars in the Settings section: 
+    - Create a custom class to tell django that in production we want to use s3 to store our static files.
+
+    - Add the folowing code to custom_storages.py in your workspace:
+
+```
+            from django.conf import settings
+            from storages.backends.s3boto3 import S3Boto3Storage
+
+
+            class StaticStorage(S3Boto3Storage):
+                location = settings.STATICFILES_LOCATION
+
+
+            class MediaStorage(S3Boto3Storage):
+                location = settings.MEDIAFILES_LOCATION
+``` 
+    - Push to GitHub.
+
+#### **Add media files to S3 Bucket**
+
+``` 
+        - In your Amazon S3 bucket click 'Create folder' and name it 'media'.
+        - Open the folder and click 'Upload'.
+        - Click 'Add files' and select all your product images.
+        - Under 'Permissions' select 'Grant public-read access'.
+        - Select 'I understand...' and click 'Upload'.
+``` 
+
+
+---
+
+## **How to Set up STRIPE**
+
+
+#### **To add Stripe keys to Config Var**:
+        - Login to Stripe or create and [account](https://dashboard.stripe.com/register).
+        - Click developers and then API Keys.
+        - Copy the public and secret key and add them to Config Vars in Heroku SETTINGS  
+        ```
+        STRIPE_PUBLIC_KEY = <your Stripe public key>
+        STRIPE_SECRET_KEY = <your Stripe secret key>
+        ```  
+#### **To create a webhook endpoint**:
+        - In Stripe - Open the Developers section and click 'webhooks'.
+        - Click on 'Add endpoint'.
+        - Enter your heroku url and add /checkout/wh/ in the end of the url.
+        Example:
+        https://<projectname>.herokuapp.com/checkout/wh/
+  
+        - Select 'receive all events' and click 'Add endpoint.
+        - Scroll down to 'Signing secret' and click 'Reveal signing secret'.
+        - Copy the signing secret and add to the Config Vars in Heroku.
+
+---
+
+## **How to Fork or Clone GitHub Repository**
+
+#### **To FORK this repository**:
+    A fork is basically a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
+
+    1. Login to GitHub and follow this link to [Z-V-Gallery Repository](https://github.com/OndrejValla/Z-V-GALLERY).
+    2. At the top right of the page, click on the fork button.
+    3. Now You should have a copy of the repository in your GitHub account.
+
+#### **To CLONE this repository**:
+    1. Login to GitHub and follow this link to [Z-V-Gallery Repository](https://github.com/OndrejValla/Z-V-GALLERY).
+    2. Click on the ‘Code’ button 
+    3. To clone using HTTPS, copy the link that is displayed by clicking on the copy icon 
+    [Code Clone Icon](https://github.com/OndrejValla/Z-V-GALLERY.git).
+    4. Open a terminal in your preferred IDE (e.g. GitPod, VSCode)
+    5. Use  the ‘git clone’ command and add the link that you copied in step 3.
+    6. Click the button 'Clone Repository', add the url you copied above and hit enter.
+    8. A clone will be created locally.
+
+For more info on how to clone a repository click [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
+
+
+---
+
+## **How To Setup local deployment**:
+
+**Clone or fork this repository**
+
+**Install the requirements by typing:**  
+    ```
+    pip3 install -r requirements.txt
+    ```  
+    in the terminal.
+
+**Set the environment variables:**
+ ```
+    if you're using GitPod: 
+    - In your workspace click 'Settings'.
+    - In Environment Variables insert the following variables:
+
+        'DEVELOPMENT', 'True'
+        'SECRET_KEY', '<your secret key>'  e.g. from a key generator
+        'STRIPE_PUBLIC_KEY', '<your stripe public key>'
+        'STRIPE_SECRET_KEY', '<your stripe secret key>'
+        'STRIPE_WH_SECRET', '<your stripe webhook secret>'
+```
+
+ 
+```
+    If you're using a local IDE, like VSCode:
+    - Create a .gitignore file in the root directory, if there isn't one.
+    - Open the .gitignore file and add 'env.py' to it, if it isn't in there. 
+    - Create an env.py file and set the environment variables by adding the following text: 
+
+        import os
+
+        os.environ["STRIPE_PUBLIC_KEY"] = '<your stripe public key>'
+        os.environ["STRIPE_SECRET_KEY"] = '<your stripe secret key>'
+        os.environ["STRIPE_WH_SECRET"] = '<your stripe webhook secret>'
+
+        os.environ["SECRET_KEY"] = '<your secret key>'  e.g. from a key generator
+
+        os.environ["DEVELOPMENT"] = 'True'
+
+```
+
+4. **Set up the STRIPE** 
+    As described above.
+
+    PLEASE NOTE: It is highly recomended to use random Django Secret Key Generator to generate your secret keys.
+
+4. **Migrate the database models**
+    Check before migrations
+    ```
+    python3 manage.py makemigrations --dry-run
+    ```
+    Make migrations
+    ```
+    python3 manage.py makemigrations
+    ```
+    Check before migrate
+    ```
+    python3 manage.py migrate --plan
+    ```
+    Migrate
+    ```
+    python3 manage.py migrate
+    ```
+
+5. **Load product data.**
+    Type `python3 manage.py loaddata db.json`
+    or Load all your data manualy.
+6. **Create a superuser account**
+    `python3 manage.py createsuperuser`
+    Add a username and password.   
+7. **Run the app.**
+   In the terminal, type: `python3 manage.py runserver`
+
+**ENJOY!**

@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-<!--- Checkout Form by Code Institute --->
+<!-- Checkout Form by Code Institute -->
 <div class="container">
     <div class="row">
         <div class="col text-center mt-3">
@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="row text-center">
-        <!--- Order Summary Window --->
+        <!-- Order Summary Window -->
         <div class="col-12 col-lg-6 order-lg-last mb-5">
             <div class="row mb-4">
                 <div class="col-7 offset-2">
@@ -64,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <!--- Customer Details and Address Window --->
+        <!-- Customer Details and Address Window -->
         <div class="col-12 col-lg-6">
             <p><strong>Please fill out the form to complete your order</strong></p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -98,10 +98,10 @@
                 </fieldset>
                 <fieldset class="px-3">
                     <legend class="fieldset-label text-dark px-2 w-auto">Payment</legend>
-                    <!--- A Stripe card element --->
+                    <!-- A Stripe card element -->
                     <div class="mb-3" id="card-element"></div>
 
-                    <!--- Display form errors --->
+                    <!-- Display form errors -->
                     <div class="mb-3 text-left text-danger" id="card-errors" role="alert"></div>
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>

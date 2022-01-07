@@ -20,13 +20,13 @@ def contact(request):
             full_name = request.POST['full_name']
             message = request.POST['message']
             subject = ('We have received your message with subject: ' +
-                    request.POST['subject'])
+                       request.POST['subject'])
             body = render_to_string('contact/confirmation_emails/' +
                                     'customer_confirmation_email.txt',
                                     {'full_name': full_name,
                                         'subject': subject,
                                         'message': message,
-                                    })
+                                     })
 
             send_mail(
                 subject,
@@ -45,7 +45,7 @@ def contact(request):
                                         'subject': subject,
                                         'message': message,
                                         'cust_email': cust_email,
-                                    })
+                                     })
 
             send_mail(
                 subject,

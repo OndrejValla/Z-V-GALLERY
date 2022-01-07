@@ -99,8 +99,8 @@ class StripeWH_Handler:
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)
-        if order_exists: 
-            self._send_confirmation_email(order)       
+        if order_exists:
+            self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]}',
                 status=200)
@@ -131,7 +131,8 @@ class StripeWH_Handler:
                         )
                         order_line_item.save()
                     else:
-                        for frame, quantity in item_data['items_by_frame'].items():
+                        for frame, quantity in item_data['items_by_frame'].items(
+                        ):
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
@@ -143,11 +144,11 @@ class StripeWH_Handler:
                 if order:
                     order.delete()
                 return HttpResponse(
-                    content=f'Webhook received: {event["type"]} | ERROR: {e}',
+                    content=f'Webhook: {event["type"]} | ERROR: {e}',
                     status=500)
         self._send_confirmation_email(order)
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
+            content=f'Webhook: {event["type"]} | SUCCESS',
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):

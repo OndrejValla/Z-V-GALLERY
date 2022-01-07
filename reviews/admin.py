@@ -21,4 +21,5 @@ class ReviewAdmin(admin.ModelAdmin):
 
     ordering = ('-date_added',)
 
+
 admin.site.register(Review, ReviewAdmin)

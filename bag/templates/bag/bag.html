@@ -27,6 +27,7 @@
                     </thead>
 
                     {% for item in bag_items %}
+
                     <tr>
                         <!--- Product Image --->
                         <td class="p-3 w-25">
@@ -92,6 +93,7 @@
                             <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                     </tr>
+
                     {% endfor %}
                     <!--- Bag Grand Total --->
                     <tr>
@@ -140,11 +142,11 @@
     $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
-    })
+    });
 
     // Remove item and reload on click
     $('.remove-item').click(function (e) {
-        var csrfToken = "{{ csrf_token }}"
+        var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var frame = $(this).data('product_frame');
         var url = `/bag/remove/${itemId}/`;
@@ -157,6 +159,6 @@
             .done(function () {
                 location.reload();
             });
-    })
+    });
 </script>
 {% endblock %}

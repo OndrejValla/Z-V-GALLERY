@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="row">
-        <!----Sort by  Projects---->
+        <!-- Sort by  Projects -->
         <div class="col-3 ml-4 mr-0">
             <ul class="list-inline list-unstyled text-center">
                 <li class="list-inline-item dropdown">
@@ -32,7 +32,7 @@
                 </li>
             </ul>
         </div>
-        <!----Search Prints Form---->
+        <!-- Search Prints Form -->
         <div class="col-6 mt-3">
             <form method="GET" action="{% url 'products' %}">
                 <div class="input-group w-100">
@@ -50,7 +50,7 @@
         </div>
         <div class="col-3"></div>
     </div>
-    <!---All Prints--->
+    <!-- All Prints -->
     <div class="row mt-3">
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-1"></div>
@@ -95,7 +95,7 @@
                         </div>
                     </div>
                 </div>
-                <!--- Thank You to Code Institute for a great example of cards separation --->
+                <!-- Thanks to The Code Institute for a great example of cards separation -->
                 {% if forloop.counter|divisibleby:1 %}
                 <div class="col-12 d-sm-none mb-3">
                     <hr>
@@ -121,7 +121,7 @@
         </div>
     </div>
 </div>
-<!--- Back to the Top button--->
+<!-- Back to the Top button -->
 <div class="to-top-button">
     <a class="to-top-button-link">
         <i class="fas fa-angle-double-up" title="Back To Top"></i>
@@ -131,9 +131,9 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     $('.to-top-button-link').click(function (e) {
-        window.scrollTo(0, 0)
-    })
+        window.scrollTo(0, 0);
+    });
 </script>
 {% endblock %}

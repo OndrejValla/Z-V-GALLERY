@@ -172,7 +172,7 @@ The information provided should be easily visible for the user:
 ### **Pages**
 #### **Frontend**
 
-The website has 12 main content / pages plus account registration / login pages. Each page has a header with the logo linked to the Home page, and a footer.
+The website has 12 main content pages plus account registration / login pages. Each page has a header with the logo linked to the Home page, and a footer.
 The links in the header are shown depending on whether a user is logged in or not and if the user is the admin or not.
 When a user is not registered nor logged in, the register and login links are shown in My Account section.
 When a user is logged in, the register and login links are hidden and a profile link and logout link are shown in My Account section.
@@ -375,10 +375,12 @@ The final appearance of the website vary from original wireframes, however, the 
 - [PostgreSQL](https://www.postgresql.org/) used as an open source relational cloud database after development to Heroku.
 - [Amazon AWS](https://aws.amazon.com/) used to store static files after deployment.
 - [Heroku](https://www.heroku.com/) a cloud platform for deploying the website.
-- [W3C Markup Validation Service](https://validator.w3.org/) to check for markup validity.
+- [W3C Markup Validation Service](https://validator.w3.org/) to validate Html files.
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to check the CSS-code.
 - [JSHint](https://jshint.com/) to check the Javascript code.
 - [PEP8 checker](http://pep8online.com/) to check the python code for PEP8 requirements. 
 - [Favicon.io/](https://favicon.io/) to create the favicon for the website.
 - [Coolors](https://coolors.co/) to make the colour scheme.
 - [quickdatabasediagrams.com](https://quickdatabasediagrams.com) to create the database diagram.
+
+

@@ -9,6 +9,7 @@ def view_bag(request):
 
     return render(request, 'bag/bag.html')
 
+
 # Views by Code Institute, Boutique project. Thanks
 # Add To The Bag View
 def add_to_bag(request, item_id):
@@ -26,25 +27,33 @@ def add_to_bag(request, item_id):
         if item_id in list(bag.keys()):
             if frame in bag[item_id]['items_by_frame'].keys():
                 bag[item_id]['items_by_frame'][frame] += quantity
-                messages.success(request, f'Added more {product.name} with {frame.upper()} frame.')
+                messages.success(
+                    request, f'Added {product.name} {frame.upper()} frame')
             else:
                 bag[item_id]['items_by_frame'][frame] = quantity
-                messages.success(request, f'{product.name} with {frame.upper()} frame has been added.')
+                messages.success(
+                    request, f'{product.name} {frame.upper()} frame added')
         else:
             bag[item_id] = {'items_by_frame': {frame: quantity}}
-            messages.success(request, f'{product.name} with {frame.upper()} frame is now in the Bag!')
+            messages.success(
+                request,
+                f'{product.name} with {frame.upper()} frame is in the Bag!')
     else:
         if item_id in list(bag.keys()):
             bag[item_id] += quantity
-            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+            messages.success(
+                request, f'Updated {product.name} quantity to {bag[item_id]}')
         else:
             bag[item_id] = quantity
-            messages.success(request, f'Added {product.name} to the Shopping Bag!')
+            messages.success(
+                request, f'Added {product.name} to the Shopping Bag!')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
 
 # Adjust The Bag View
+
+
 def adjust_bag(request, item_id):
     """ Adjust a quantity of products in the shopping bag """
 
@@ -58,24 +67,32 @@ def adjust_bag(request, item_id):
     if frame:
         if quantity > 0:
             bag[item_id]['items_by_frame'][frame] = quantity
-            messages.success(request, f'Updated the quantity of {product.name} with {frame.upper()} frame.')
+            messages.success(
+                request,
+                f'Updated the quantity of {product.name}')
         else:
             del bag[item_id]['items_by_frame'][frame]
             if not bag[item_id]['items_by_frame']:
                 bag.pop(item_id)
-            messages.success(request, f'{product.name} with {frame.upper()} frame has been removed!')
+            messages.success(
+                request,
+                f'{product.name} with {frame.upper()} frame now removed!')
     else:
         if quantity > 0:
             bag[item_id] = quantity
-            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+            messages.success(
+                request, f'Updated {product.name} quantity to {bag[item_id]}')
         else:
             bag.pop(item_id)
-            messages.success(request, f'{product.name} removed from the Shopping Bag!')
+            messages.success(
+                request, f'{product.name} removed from the Shopping Bag!')
 
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
 
 # Remove From The Bag View
+
+
 def remove_from_bag(request, item_id):
     """ Removes the item from the shopping bag """
 
@@ -90,10 +107,13 @@ def remove_from_bag(request, item_id):
             del bag[item_id]['items_by_frame'][frame]
             if not bag[item_id]['items_by_frame']:
                 bag.pop(item_id)
-            messages.success(request, f'{product.name} with {frame.upper()} frame has been removed!')
+            messages.success(
+                request,
+                f'{product.name} with {frame.upper()} frame has been removed')
         else:
             bag.pop(item_id)
-            messages.success(request, f'Removed {product.name} from the Shopping Bag!')
+            messages.success(
+                request, f'Removed {product.name} from the Shopping Bag!')
 
         request.session['bag'] = bag
         return HttpResponse(status=200)

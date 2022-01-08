@@ -23,7 +23,6 @@ Thank You for understanding, Enjoy!
 --- 
 
 
-
 # Table of Content
 1. [Overview](#overview)
 
@@ -31,22 +30,17 @@ Thank You for understanding, Enjoy!
 
 3. [User Experience](#user-experience)
    
-
 4. [Wireframes](#wireframes)
 
 5. [Features](#features)
-
 
 6. [Used Technologies](#used-technologies)
 
 7. [Testing](#testing)
 
+8. [Deployment](#deployment)
 
-8. [Bugs](#bugs)
-
-9. [Deployment](#deployment)
-
-10. [Credits](#credits)
+9. [Credits](#credits)
 ---
 
 # Overview
@@ -382,6 +376,11 @@ The final appearance of the website vary from original wireframes, however, the 
 - [Favicon.io/](https://favicon.io/) to create the favicon for the website.
 - [Coolors](https://coolors.co/) to make the colour scheme.
 - [quickdatabasediagrams.com](https://quickdatabasediagrams.com) to create the database diagram.
+
+
+---
+# Testing
+For testing results, please see [TEST.md](https://github.com/OndrejValla/Z-V-GALLERY/blob/main/TEST.md)
 
 
 ---
@@ -842,4 +841,7 @@ For more info on how to clone a repository click [here](https://docs.github.com/
 7. **Run the app.**
    In the terminal, type: `python3 manage.py runserver`
 
-**ENJOY!**
+
+
+---
+# Credits

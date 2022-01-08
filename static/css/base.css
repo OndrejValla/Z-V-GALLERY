@@ -95,7 +95,8 @@ body {
     }
 
     #home-page-menu {
-        padding-top: 9vh !important;
+        height: 450px;
+        padding-top: 6vh !important;
     }
 }
 

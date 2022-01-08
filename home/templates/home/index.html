@@ -3,13 +3,13 @@
 
 {% block content %}
 <!-- Home Page Menu -->
-<div id="home-page-menu" class="container pt-4 mb-5">
+<div id="home-page-menu" class="container mt-3 mb-5">
     <div id="color-overlay"></div>
     <div class="row justify-content-center">
-        <a href="#home-artist" class="col-10 col-sm-6 home-page-button btn">About</a>
+        <a href="#home-art-series" class="col-10 col-sm-6 home-page-button btn">Art Series</a>
     </div>
     <div class="row justify-content-center">
-        <a href="#home-art-series" class="col-10 col-sm-6 home-page-button btn">Art Series</a>
+        <a href="#home-artist" class="col-10 col-sm-6 home-page-button btn">About</a>
     </div>
     <div class="row justify-content-center">
         <a href="{% url 'contact' %}" class="col-10 col-sm-6 home-page-button btn">Contact Us</a>
@@ -18,49 +18,18 @@
         <a href="{% url 'products' %}" class="col-10 col-sm-6 home-page-button btn">Shop</a>
     </div>
 </div>
-<!-- Artist Info -->
-<a id="home-artist"></a>
-<div class="container mt-3 mb-5">
-    <div class="row">
-        <div id="artist-image" class="col-12 col-lg-5 text-center mb-3 mt-3">
-        </div>
-        <div class="col-12 col-lg-7 bg-white text-center about-zuzu">
-            <h2 class="mt-4">About</h2>
-            <hr class="w-50 mb-2">
-            <p class="artist-p mb-3">Zuzu Valla is Slovak photographer, currently living in the U.K.
-                <br> Zuzu is defining her very own and recognisable signature of the photography style by
-                exploring multiple layers of distinct human beauty.
-                <br>She was brought up in a traditional Slovak family,
-                growing up in the last years of strong communism regime and social transformation of
-                Slovakia.
-                <br>Zuzu’s grandfather was a keen amateur photographer shooting in black and white, while her
-                grandmother had been using special painting method to colour his photographs.
-                <br>Zuzu started her interest in photography almost by accident in her late 20s. After being
-                disappointed by using a mobile phone camera,
-                she reached for her first DSLR camera and has never looked back.
-                Photography had become her passion.
-                <br>Zuzu is excited about capturing the moments
-                where beauty, sadness and mystery come together,
-                creating her unique visual signature.
-            </p>
-            <a href="{% url 'contact' %}" class="btn btn-outline-dark mb-1">
-                <span class="text-uppercase">Contact</span>
-            </a>
-        </div>
-    </div>
-</div>
 <!-- Art Series -->
-<a id="home-art-series"></a>
-<div class="container mt-5 mb-5">
+<div class="container mt-5">
+    <a id="home-art-series"></a>
     <div class="row mt-5 mb-2">
         <div class="col-6 offset-3 text-center">
             <h2 class="mt-4 art-series-h1">Art Series</h2>
-            <hr class="w-100 mb-2">
+            <hr class="w-100">
         </div>
     </div>
     <!-- Art Series Individual Cards -->
     {% for project in projects %}
-    <div class="row art-series-row mt-4 mb-2">
+    <div class="row art-series-row mt-3 mb-2">
         {% if forloop.counter|divisibleby:2 %}
         <div class="col-12 col-lg-5">
             <a href="{% url 'products' %}?project={{ project.name }}">
@@ -112,11 +81,11 @@
     {% endfor %}
 </div>
 <!-- Gallery -->
-<div class="container mt-5 d-none d-md-block">
+<div class="container d-none d-md-block mt-5">
     <a id="home-gallery-anchor"></a>
     <div class="row">
-        <div class="col-6 offset-3 mt-5 mb-2 text-center">
-            <h2 class="pl-4 mt-4">Gallery</h2>
+        <div class="col-6 offset-3 mt-5 text-center">
+            <h2 class="pl-4 mt-1">Gallery</h2>
             <hr class="w-100 mb-2">
         </div>
     </div>
@@ -147,6 +116,39 @@
         </div>
         <div class="col-md-4 img-fluid home-gallery">
             <img src="{{ MEDIA_URL }}home-gallery-22.png" alt="Image from Zuzu Valla's Gallery">
+        </div>
+    </div>
+</div>
+<!-- Artist Info -->
+<a id="home-artist"></a>
+<div class="container mt-5 mb-5">
+    <div class="row mt-5 mb-5 d-none d-md-block">
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-5 offset-lg-1 bg-white text-center about-zuzu">
+            <h2 class="mt-4">About</h2>
+            <hr class="w-50 mb-2">
+            <p class="artist-p mb-3">Zuzu Valla is a Slovak photographer, currently living in the U.K.
+                <br> Zuzu is defining her very own and recognizable signature of the photography style by
+                exploring multiple layers of distinct human beauty.
+                <br>She was brought up in a traditional Slovak family,
+                growing up in the last years of the strong communist regime and social transformation of
+                Slovakia.
+                <br>Zuzu’s grandfather was a keen amateur photographer shooting in black and white, while her
+                grandmother had been using special painting methods to color his photographs.
+                <br>Zuzu started her interest in photography almost by accident in her late 20s. After being
+                disappointed by using a mobile phone camera,
+                she reached for her first DSLR camera and has never looked back.
+                Photography had become her passion.
+                <br>Zuzu is excited about capturing the moments
+                where beauty, sadness, and mystery come together,
+                creating her unique visual signature.
+            </p>
+            <a href="{% url 'contact' %}" class="btn btn-outline-dark mt-1 mb-1">
+                <span class="text-uppercase">Contact</span>
+            </a>
+        </div>
+        <div id="artist-image" class="col-12 col-lg-4 offset-lg-1 text-center mb-3 mt-3 order-lg-first">
         </div>
     </div>
 </div>

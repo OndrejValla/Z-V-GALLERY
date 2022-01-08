@@ -11,7 +11,7 @@ Created by Ondrej Valla
 The Z-V-Gallery (Zuzu Valla Gallery) website is my fourth ‘Milestone Project’ as part of the Full Stack Development course of Code Institute. The focus lies on using the Django framework, using an authorisation and authentication system and using Stripe payment system. I believe this website could be a fundation for the real online store, selling printed portraits of Zuzu Valla's work in the future.
 
 ---
-## * PLEASE NOTE! *
+### **PLEASE NOTE!**
 
 ### This website is for educational purposes only. 
 ### Don’t use real credit card details, instead use the following details for testing purposes:  
@@ -324,20 +324,20 @@ The final appearance of the website vary from original wireframes, however, the 
 
 - **CRUD functionality (Create, Read, Update, Delete) functionality:**
 
-    *Create:*  
-    - Admin can create / add new prints / products.  
-    - Users can create a review for a print / product.
+    **Create:**  
+        - Admin can create / add new prints / products.  
+        - Users can create a review for a print / product.
 
-    *Read:*  
-    - All users can search and view prints / products.
+    **Read:**  
+        - All users can search and view prints / products.
 
-    *Update:*
-    - Admin can edit prints / products.  
-    - Users can edit their own review.
+    **Update:**
+        - Admin can edit prints / products.  
+        - Users can edit their own review.
 
-    *Delete:*
-    - Admin can delete prints / products.  
-    - Users can delete their own review.
+    **Delete:**
+        - Admin can delete prints / products.  
+        - Users can delete their own review.
 
 
 
@@ -399,68 +399,72 @@ Every time commits and pushes are sent to GitHub, the Heroku App starts deployin
 ## **To deploy to Heroku**
 
 1. **Create a Heroku App**
-    1. Create a new app by clicking the ‘New’ button in [Heroku Dashboard](https://dashboard.heroku.com/apps)
-    2. Give it a unique name and set region to your nearest region.
-    3. Click ‘Create App’ in right top corner.
-    4. Click on the 'Resources' tab and in Add-ons type: postgress, then select 'Heroku Postgres'. 
-    5. For the subscription plan, choose the free plan and click submit form.
+
+        1. Create a new app by clicking the ‘New’ button in [Heroku Dashboard](https://dashboard.heroku.com/apps)
+        2. Give it a unique name and set region to your nearest region.
+        3. Click ‘Create App’ in right top corner.
+        4. Click on the 'Resources' tab and in Add-ons type: postgress, then select 'Heroku Postgres'. 
+        5. For the subscription plan, choose the free plan and click submit form.
 
 2. **Setup the Postgres Database**
-    1. In your workspace install dj_database_url and psycopg2:   
-        ```
-        pip3 install dj_database_url
-        ```
-        and
-        ```
-        pip3 install psycopg2-binary
-        ```
-    2. Create a requirements file.  
-        ```
-        pip3 freeze > requirements.txt
-        ```
-    3. Import dj_database_url in **settings.py**.
-        ```
-        import dj_database_url
-        ```
 
-    4. Backup the database if you're using a local database instead of fixtures.  
-        ```
+        1. In your workspace install dj_database_url and psycopg2:   
+    ```
+        pip3 install dj_database_url
+    ```
+        and
+    ```
+        pip3 install psycopg2-binary
+    ```
+        2. Create a requirements file.  
+    ```
+        pip3 freeze > requirements.txt
+    ```
+        3. Import dj_database_url in **settings.py**.
+    ```
+        import dj_database_url
+    ```
+
+        4. Backup the database if you're using a local database instead of fixtures.  
+    ```
         python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
-        ```
+    ```
         PLEASE make sure you're connected to your mysql database at this stage.  
-    5.  In Settings.py scroll down to DATABASES, comment out the default configuration and add the database url from Heroku   
-        ```
+        5. In Settings.py scroll down to DATABASES, comment out the default configuration and add the database url from Heroku   
+    ```
         DATABASES = {
                 'default': dj_database_url.parse('DATABASE_URL')
         }
-        ```
+    ```
         You can add the database url from Heroku's Config Vars in the Settings tab. 
         PLEASE MAKE SURE THAT you dont commit and push The DATABASE_URL from Heroku.
-    6. Run migrations.  
-          ```
-          python3 manage.py migrate
-          ```
-    7. If you are using a local database type:  
-        ```
+
+        6. Run migrations.  
+    ```
+        python3 manage.py migrate
+    ```
+        7. If you are using a local database type:  
+    ```
         python3 manage.py loaddata db.json
-        ```  
+    ```  
         to import the data from the mySQL database to Postgres.
-    8. If You Are using fixtures do as following:
+        
+        8. If You Are using fixtures do as following:
 
         First import the categories:  
-        ```
+    ```
         python3 manage.py loaddata categories
-        ```  
+    ```  
         And then the products:  
-        ```
+    ```
         python3 manage.py loaddata products
 
-        ```  
+    ```  
 
 3. **Create a superuser**
 
-    - Use command: `python3 manage.py createsuperuser` 
-    - Create a username and password.
+            - Use command: `python3 manage.py createsuperuser` 
+            - Create a username and password.
 
 4. **Set up local and remote database in settings.py**  
     In **settings.py** :
@@ -479,57 +483,60 @@ Every time commits and pushes are sent to GitHub, the Heroku App starts deployin
     ```
     Therefore, when the app is running on Heroku it connects to Postgres(remote database). Otherwise, when running locally on GitPod it will connects to MYSQL(local database).
 
-5. **Install gunicorn**  
-    Once the app is deployed to Heroku, Gunicorn will replace the development server and will act as the web server.  
-    - Use command: `pip3 install gunicorn`
+5. **Install gunicorn** 
 
-6. **Create a Heroku 'Procfile'**  
-    The Procfile is the file that let Heroku know which file runs the app and how to run the app.
-    1. In the terminal type: `touch Procfile` to create 'Procfile'.
-    2. Inside the Procfile type:   
+        Once the app is deployed to Heroku, Gunicorn will replace the development server and will act as the web server.  
+        - Use command: `pip3 install gunicorn`
+
+6. **Create a Heroku 'Procfile'**
+
+        The Procfile is the file that let Heroku know which file runs the app and how to run the app.
+        1. In the terminal type: `touch Procfile` to create 'Procfile'.
+        2. Inside the Procfile type:   
     ```
     web: gunicorn <Github yourappname>.wsgi:application
     ```
 
 7. **Connect to Heroku in the terminal**
-    1. Login to your account on the Heroku website.
-    2. Go to account settings (click on your avatar).
-    3. Scroll down to the API Key section.
-    4. Click 'Reveal' and copy your API Key.
-    5. Login to Heroku via the Command line  
-        ```
-        heroku login -i
-        ```
-    6. Login with your email but use the API Key as the password.
-    7. Temporarily disable the collection of static files until AWS has been setup.  
-        ```
-        heroku config:set DISABLE_COLLECTSTATIC=1 --app <Heroku appname>
-        ```  
-    8. Add the hostnames to allowed hosts in `settings.py`.  
-        ```
-        ALLOWED_HOSTS = ['<heroku appname>.herokuapp.com', 'localhost']
 
-        ```
-    9. Commit to GitHub.
-        ``` 
-        git add .
-        git commit -m "commit message"
-        git push
-        ``` 
-   10. Commit to Heroku. Make sure you have git remote initialized.  
-        ```
-        heroku git:remote -a <Heroku appname>
-        ```  
-        Push to Heroku.  
-        ```
-        git push heroku
-        ```
+        1. Login to your account on the Heroku website.
+        2. Go to account settings (click on your avatar).
+        3. Scroll down to the API Key section.
+        4. Click 'Reveal' and copy your API Key.
+        5. Login to Heroku via the Command line  
+    ```
+    heroku login -i
+    ```
+        6. Login with your email but use the API Key as the password.
+        7. Temporarily disable the collection of static files until AWS has been setup.  
+    ```
+    heroku config:set DISABLE_COLLECTSTATIC=1 --app <Heroku appname>
+    ```  
+        8. Add the hostnames to allowed hosts in `settings.py`.  
+    ```
+    ALLOWED_HOSTS = ['<heroku appname>.herokuapp.com', 'localhost']
+    ```
+        9. Commit to GitHub.
+    ``` 
+    git add .
+    git commit -m "commit message"
+    git push
+    ``` 
+        10. Commit to Heroku. Make sure you have git remote initialized.  
+    ```
+    heroku git:remote -a <Heroku appname>
+    ```  
+    Push to Heroku.  
+    ```
+    git push heroku
+    ```
 
 8. **Setup automatic deployment from GitHub to Heroku.**  
-    1. In Heroku, click the Deploy tab.  
-    2. Under 'Deployment method', Click on 'Connect to GitHub'.
-    3. Under 'Connect to GitHub', enter the GitHub repository name and click ‘Search’. Find Your Repository and click 'Connect'.
-    4. Next click the ‘Enable Automatic Deploys’ button further down.
+
+        1. In Heroku, click the Deploy tab.  
+        2. Under 'Deployment method', Click on 'Connect to GitHub'.
+        3. Under 'Connect to GitHub', enter the GitHub repository name and click ‘Search’. Find Your Repository and click 'Connect'.
+        4. Next click the ‘Enable Automatic Deploys’ button further down.
 
 
 ---

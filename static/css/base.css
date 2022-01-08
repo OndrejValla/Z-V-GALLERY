@@ -71,7 +71,6 @@ body {
     position: relative;
     background: url(/media/home-page-menu-background.jpg) no-repeat center center;
     background-size: cover;
-    padding-top: 5vh !important;
 }
 
 .home-page-button {
@@ -84,7 +83,6 @@ body {
     border: 3px solid rgb(0, 0, 0);
     cursor: pointer;
     overflow: auto;
-    margin-top: 10%;
 }
 
 .home-page-button:hover {
@@ -93,7 +91,49 @@ body {
 
 @media (max-width: 767px) {
     .home-page-button {
-        margin-top: 12%;
+        margin-top: 7%;
+    }
+
+    #home-page-menu {
+        padding-top: 9vh !important;
+    }
+}
+
+@media (min-width: 767px) {
+    .home-page-button {
+        margin-top: 4%;
+    }
+
+    #home-page-menu {
+        padding-top: 8vh !important;
+    }
+}
+
+@media (min-width: 1100px) {
+    .home-page-button {
+        margin-top: 3%;
+    }
+
+    #home-page-menu {
+        padding-top: 10vh !important;
+    }
+}
+
+@media (min-width: 1500px) {
+    .home-page-button {
+        max-width: 30vw;
+        margin-top: 2%;
+    }
+
+    #home-page-menu {
+        padding-top: 14vh !important;
+    }
+}
+
+@media (min-width: 2000px) {
+    .home-page-button {
+        max-width: 25vw;
+        margin-top: 1%;
     }
 
     #home-page-menu {
@@ -101,27 +141,14 @@ body {
     }
 }
 
-@media (min-width: 767px) {
-    .home-page-button {
-        margin-top: 8%;
-    }
-}
-
-@media (min-width: 1500px) {
-    .home-page-button {
-        margin-top: 5%;
-    }
-}
-
-@media (min-width: 2000px) {
-    .home-page-button {
-        margin-top: 4%;
-    }
-}
-
 @media (min-width: 2800px) {
     .home-page-button {
+        max-width: 25vw;
         margin-top: 1%;
+    }
+
+    #home-page-menu {
+        padding-top: 8vh !important;
     }
 }
 

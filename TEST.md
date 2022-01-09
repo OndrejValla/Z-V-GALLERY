@@ -528,7 +528,7 @@ The testing was done by:
 No issues found during testing.  
 
 ---
-## Testing responsiveness
+## Testing page responsiveness
 To test the responsiveness of the website, I've used Chrome Dev Tools by:
 - right clicking on the page
 - clicking inspect 

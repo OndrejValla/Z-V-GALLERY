@@ -468,7 +468,7 @@ However No major issues detected.
 
 This is the screenshot of profile.html file. All other HTML files in this project are having same / very similar Errors and Warnings.
 
-         ![Preview Image](media/readme-files/profile-html.png)
+![Preview Image](media/readme-files/profile-html.png)
 
 ---
 ### CSS  
@@ -484,10 +484,10 @@ All CSS files came out with no issues.
 
 This is the outcome for all JavaScript files, with no major issues.
 
-         ![Preview Image](media/readme-files/stripe-elements-js.png)
-         ![Preview Image](media/readme-files/countryfield-js.png)
-         ![Preview Image](media/readme-files/bag-html-js.png)
-         ![Preview Image](media/readme-files/back-to-top-button-js.png)
+![Preview Image](media/readme-files/stripe-elements-js.png)
+![Preview Image](media/readme-files/countryfield-js.png)
+![Preview Image](media/readme-files/bag-html-js.png)
+![Preview Image](media/readme-files/back-to-top-button-js.png)
 
 ---
 ### Python  
@@ -497,12 +497,12 @@ I used the package AUTOPEP8 [autopep8 1.6.0](https://pypi.org/project/autopep8/)
 The most of the files are fully compliant, except a few files below. 
 No major issues detected.
 
-         ![Preview Image](media/readme-files/bag-views-py.png)
-         ![Preview Image](media/readme-files/checkout-views-py.png)
-         ![Preview Image](media/readme-files/checkout-webhook-handler-py.png)
-         ![Preview Image](media/readme-files/checkout-webhooks-py.png)
-         ![Preview Image](media/readme-files/products-widgets-py.png)
-         ![Preview Image](media/readme-files/profiles-forms-py.png)
+![Preview Image](media/readme-files/bag-views-py.png)
+![Preview Image](media/readme-files/checkout-views-py.png)
+![Preview Image](media/readme-files/checkout-webhook-handler-py.png)
+![Preview Image](media/readme-files/checkout-webhooks-py.png)
+![Preview Image](media/readme-files/products-widgets-py.png)
+![Preview Image](media/readme-files/profiles-forms-py.png)
 
 ---
 
@@ -510,7 +510,34 @@ No major issues detected.
 ### Lighthouse of Google Developer Tools
 
 **DESKTOP REPORT**
-         ![Preview Image](media/readme-files/lighthouse-desktop.png)
+![Preview Image](media/readme-files/lighthouse-desktop.png)
 
 **MOBILE REPORT**
-         ![Preview Image](media/readme-files/lighthouse-mobile.png)
+![Preview Image](media/readme-files/lighthouse-mobile.png)
+
+---
+
+## Browsers compatibility test
+I've tested the website on Chrome, Opera, Microsoft Edge and Mozilla Firefox.  
+The testing was done by:
+
+- Visually checking the pages.
+- Checking all links.
+- Checking CRUD functionality.
+
+No issues found during testing.  
+
+---
+## Testing responsiveness
+To test the responsiveness of the website, I've used Chrome Dev Tools by:
+- right clicking on the page
+- clicking inspect 
+- clicking toggle device toolbar.
+- selecting different devices.  
+
+The testing was done on widths down to a screen resolution of 300px.  
+All the elements on each page were checked.
+
+No major issues discovered.
+
+---

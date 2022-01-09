@@ -844,4 +844,57 @@ For more info on how to clone a repository click [here](https://docs.github.com/
 
 
 ---
+
 # Credits
+
+## THE MAIN CREDIT FOR:
+
+### [The Code Institute learning programme](https://codeinstitute.net/full-stack-software-development-diploma-uk/)
+All Tutorial videos are such a fantastic inspiration. Thanks to these tutorial videos of The Boutique Ado project, I could create most of my project's pages. Thank You very much!
+
+### [Code Institute Submissions](https://github.com/orgs/Code-Institute-Submissions/repositories?page=1) 
+I always find it very motivational to look on other student's projects. I like to browse the Code Institute Submissions page and look deeper into interesting projects. There is by my opinion a lots of great projects and ideas. Some of these project functions I have unsuccessfully tried to apply, and some I have successfully applied into my project BY ADAPTING IT to how I wanted the Z-V-Gallery website to appear and perform. This is a great learning curve. I am glad to be a part of this community, learning the code. I hope that also my project will inspire someone out there.
+
+## Additional Credits:
+
+### HTML5
+- The HTML code for this project is HIGHLY INSPIRED by The [Code Institute, Boutique Ado Project](https://github.com/Code-Institute-Solutions/boutique_ado_v1), adjusted to fit this project needs.
+
+- [Code Institute Submissions](https://github.com/orgs/Code-Institute-Submissions/repositories?page=1) As mentioned above.
+
+### CSS
+- Some CSS was also used after research on [Google](https://www.google.co.uk/) and the websites [W3-SCHOOLS](https://www.w3schools.com/) and  [Stack Over Flow](https://stackoverflow.com/)
+
+### JavaScript
+
+- The main JavaScript functionalities are from The [Code Institute, Boutique Ado Project](https://github.com/Code-Institute-Solutions/boutique_ado_v1).
+
+### Python
+- The Python code for this project is HIGHLY INSPIRED by The [Code Institute, Boutique Ado Project](https://github.com/Code-Institute-Solutions/boutique_ado_v1), adjusted to fit this project needs.
+
+- [Code Institute Submissions](https://github.com/orgs/Code-Institute-Submissions/repositories?page=1) As mentioned above.
+
+### Media
+- The majority of images used in this website are property of Zuzu Valla Photography (my spouse)
+[zuzuvalla.com](https://zuzuvalla.com/)
+
+- Website's Top Header and The Footer theme background from [teahub.io](https://www.teahub.io/viewwp/iTTm_1920x1080-white-abstract-wallpaper-desktop-background-abstract-white/)
+
+### Contact Application
+- Contact Form by following steps from [www.twilio.com](https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid)
+
+---
+
+### Acknowledgements
+
+- My BIGGEST THANK YOU goes to my loved wife Zuzana, for all her support in the past year.
+- BIG THANK YOU for my GREAT Mentor, **Nishant Kumar** [Nishant Kumar Github](https://github.com/nishant8BITS), Thank You Nishant, for the whole year of mentoring!! Danke schoen!
+
+- **The Code Institute** for creating this learning program.
+- **Tutoring support** at The Code Institute for their help and patience.
+
+---
+---
+---
+09.01.2022
+T Y G

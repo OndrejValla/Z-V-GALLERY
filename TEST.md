@@ -12,15 +12,15 @@ Go back to the [README file](https://github.com/OndrejValla/Z-V-GALLERY/blob/mai
     * [CSS](#css)
     * [Javascript](#javascript)
     * [Python](#python)
-- [Browser compatibility](#browser-compatibility)  
-- [Responsiveness](#responsiveness)  
+- [Browser compatibility](#browsers-compatibility-test)  
+- [Responsiveness](#testing-page-responsiveness) 
 - [Bugs](#bugs)  
 ***
 
 ## **Testing user stories**
 
 
-### **General Site Users / Shoppers**
+### **General Site Users**
 
 ### As a general site user, I would like to:
     1.  see the content of the page.
@@ -28,41 +28,41 @@ Go back to the [README file](https://github.com/OndrejValla/Z-V-GALLERY/blob/mai
 
     2.  be able to see all Prints and prices.
          All users are able to see product details, images, average rating and prices. and reviews.
-         ![Preview Image](media/readme-files/general-user-2.png)
+![Preview Image](media/readme-files/general-user-2.png)
 
     3.  view other users reviews.
          All users are able to see product details including reviews.
-         ![Preview Image](media/readme-files/general-user-3.png)
+![Preview Image](media/readme-files/general-user-3.png)
 
     4.  be able to see individual projects.
          On the Home page, there is a section, where users are able to see a card for each project. This card contains image of the project, name of the project and button link which takes users to the products (SHOP) page displaying only project's prints.
 
     5.  see all products added in to the shopping bag.
          All site users are able to add products in the bag. After a product is added in to the bag, the bag icon in the right top corner change the color and a small bag content (toast) card displays the current content of the shopping bag.
-         ![Preview Image](media/readme-files/general-user-5.png)
+![Preview Image](media/readme-files/general-user-5.png)
          Also after clicking the shopping bag icon, user is directed to the shopping bag page, where is able to see all the items in the bag.
 
     6.  be able to adjust the shopping bag before checkout.
          Before user decide to click Secure Checkout button on the bottom of the shopping bag page, there is an option to update the bag content by using plus + and minus -  buttons for the item quantity. Update and remove button to update the quantity or to remove the item from the bag.
-         ![Preview Image](media/readme-files/general-user-6.png)
+![Preview Image](media/readme-files/general-user-6.png)
 
     7.  be able to purchase prints as a guest, without creating the profile.
          All site users can make a purchase. For unsigned or unregistered users, there are register and login buttons underneath of the billing form, to give them a option to register or login.
          Once the user is registered and signed up, there is a checkbox, to save billing details in to the profile.
-         ![Preview Image](media/readme-files/general-user-7-2.png)
+![Preview Image](media/readme-files/general-user-7-2.png)
 
     8.  get the confirmation email after the purchase.
          In the checkout billing form, there is a mandatory field for users email address. After the purchase, user does receive a confirmation email with al the order details.
-         ![Preview Image](media/readme-files/general-user-8.png)
+![Preview Image](media/readme-files/general-user-8.png)
 
     9.  be able to register and create my profile.
          Unregistered users have a option to register. After registration, they are able to login and view their profile. Once they are registered and make a purchase, order history is displayed in the profile page.
-         ![Preview Image](media/readme-files/general-user-9-1.png)
+![Preview Image](media/readme-files/general-user-9-1.png)
 
     10. be able to contact the store owner, for further details.
          If site users have any questions or concerns, they have a option to contact the site owner through the contact form page. 
          After sending the message, they receive the confirmation email with their message, ensuring them, that the message was succesfully send. The site owner is also receiving the email with customer's message and details.
-         ![Preview Image](media/readme-files/general-user-10-1.png)
+![Preview Image](media/readme-files/general-user-10-1.png)
     
     11. find out more through social media.
          On the bottom of the page, in the footer section, there are two social media links, directly taking users to Zuzu Valla's Instagram profile and LinkedIn profile.
@@ -78,20 +78,20 @@ Go back to the [README file](https://github.com/OndrejValla/Z-V-GALLERY/blob/mai
 
     2.  save and edit my billing details in my profile.
          Users can manualy fill out the billing details in their profile, or when they are making the purchase, they can click the tickbox on the checkout page, confirming, that they wish to save their billing details in to their profile for the future use. All very simple process.
-         ![Preview Image](media/readme-files/general-user-7-1.png)
+![Preview Image](media/readme-files/general-user-7-1.png)
 
     3.  see my purchase history details.
          CURRENTLY ONLY WORKING for registered users with their profiles created before the purchase. 
          This is one of the current BUGS which I am hoping to sort out in the future.
-         ![Preview Image](media/readme-files/general-user-9-2.png)
+![Preview Image](media/readme-files/general-user-9-2.png)
 
     4.  be able to comment / review products.
          Registered users are able to leave one review under each product.
-         ![Preview Image](media/readme-files/registered-user-4.png)
+![Preview Image](media/readme-files/registered-user-4.png)
 
     5.  be able to edit, or delete my review.
          Once the review is submitted, registered (logged in) user is able to go back and click Edit or Delete buttons on the bottom of the review. These two buttons are only displayed to the user under their review.
-         ![Preview Image](media/readme-files/registered-user-5.png)
+![Preview Image](media/readme-files/registered-user-5.png)
 
 
     6.  easily change my forgotten password.
@@ -121,7 +121,7 @@ Go back to the [README file](https://github.com/OndrejValla/Z-V-GALLERY/blob/mai
          There is exacly same Edit option in the product details page, underneath the individual product images. 
          Additionaly there is a little Delete button next to the Edit button alowing the Admin user to delete this product. After the Delete button is clicked, The Delete Modal shows up, souble checking whether the Admin user is sure to delete the product.
 
-         ![Preview Image](media/readme-files/admin-user-4.png)
+![Preview Image](media/readme-files/admin-user-4.png)
 
          The product edit and delete functionality is also available for the Admin user in the admin section of the page, where admin can select each of the products, edit it or delete it.
  
@@ -476,7 +476,7 @@ This is the screenshot of profile.html file. All other HTML files in this projec
 
 All CSS files came out with no issues.
 
-         ![Preview Image](media/readme-files/css-files.png)
+![Preview Image](media/readme-files/css-files.png)
 
 ---
 ### Javascript  
@@ -484,7 +484,7 @@ All CSS files came out with no issues.
 
 This is the outcome for all JavaScript files, with no major issues.
 
-![Preview Image](media/readme-files/stripe-elements-js.png)
+![Preview Image](media/readme-files/stripe-element-js.png)
 ![Preview Image](media/readme-files/countryfield-js.png)
 ![Preview Image](media/readme-files/bag-html-js.png)
 ![Preview Image](media/readme-files/back-to-top-button-js.png)
@@ -508,11 +508,15 @@ No major issues detected.
 
 
 ### Lighthouse of Google Developer Tools
+- DESKTOP REPORT
+Please see the screenshot of the desktop report:
 
-**DESKTOP REPORT**
 ![Preview Image](media/readme-files/lighthouse-desktop.png)
 
-**MOBILE REPORT**
+
+- MOBILE REPORT
+Please see the screenshot of the mobile report:
+
 ![Preview Image](media/readme-files/lighthouse-mobile.png)
 
 ---
@@ -541,3 +545,63 @@ All the elements on each page were checked.
 No major issues discovered.
 
 ---
+
+## Bugs 
+
+
+There was a few technical issues now and then while building this project.
+**I am very GRATEFUL for every help I have received from The Code Institute Tutoring team**
+**these guys are awesome!!**
+
+### Just a few examples of bugs:
+
+**1. The first** example is me having incorect file path.
+![Preview Image](media/readme-files/no-show-image-1.png)
+
+- Quite easy fix:
+![Preview Image](media/readme-files/no-show-image-2.png)
+
+
+**2. The second** issue I had was my checkout process. After the successful payment was created, my checkout app was not redirecting me to the checkout success page.
+![Preview Image](media/readme-files/no-payment-1.png)
+
+- After going through my code, I found out that I had a typo:
+![Preview Image](media/readme-files/no-payment-2.png)
+
+- Checkout success page was displayed after the code was fixed.
+![Preview Image](media/readme-files/no-payment-3.png)
+
+
+**3. The third** example of bugs, was the issue with the webhooks: 
+- Together with the Student Tutoring team we spend around four hours, trying to figure out why **ALL** my webhooks was getting **ERROR: 401**
+![Preview Image](media/readme-files/webhook-401.png)
+
+- There was a great process of commenting out the parts of the code in **webhooks.py and webhooks_handler.py** to eliminate each functionality and to find out which part of the code is causing the issue. **This was a great learning curve for me as a student** and again BIG THANK YOU to the Tutoring team of The Code Institute.
+![Preview Image](media/readme-files/webhooks-401.png)
+
+- In the end we did figure out the issue, all webhooks were working correctly, apart of the one: **payment_intent.succeeded** which we have find out, the issue was, that the webhook had the **empty shopping bag** which obviously is not possible to happen in the live project.
+
+**4. The fourth** example of the issue, was **SERVER ERROR 500** in the Deployed website. The issue was happening after creating the  **CONTACT** application and the **REVIEW** application.
+
+- **The Contact form issue**:
+![Preview Image](media/readme-files/contact-form-error-500-1.png)
+
+![Preview Image](media/readme-files/contact-form-error-500-2.png)
+
+- After setting up the **DEVELOPMENT** variable in the Heroku app, to open the Debug mode, the following error was displayed:
+![Preview Image](media/readme-files/contact-form-error-500-3.png)
+
+- **The Review issue**:
+- After clicking on the product in products.html, no redirection to product_detail.html, but the Error 500 occured.
+
+![Preview Image](media/readme-files/click-product-error-500-1.png)
+
+![Preview Image](media/readme-files/click-product-error-500-2.png)
+
+- The reason for this problem was, that all the Migrations was created only for the Workspace MySQL database but not for the Heroku App Postgres database.
+
+- Together with Tutoring team, we solved the issue by running the **Migrations for the Postgres Database**.
+
+![Preview Image](media/readme-files/error-500-3.png)
+
+- This was another great example of the learning curve.

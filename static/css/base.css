@@ -89,7 +89,7 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-@media (max-width: 400px) {
+@media (max-width: 767px) {
     .home-page-button {
         margin-top: 7%;
     }
@@ -100,25 +100,14 @@ body {
     }
 }
 
-@media (max-width: 767px) {
-    .home-page-button {
-        margin-top: 7%;
-    }
-
-    #home-page-menu {
-        max-height: 500px;
-        padding-top: 5vh !important;
-    }
-}
-
 @media (min-width: 767px) {
     .home-page-button {
         margin-top: 4%;
     }
 
     #home-page-menu {
-        height: 550px;
-        padding-top: 6vh !important;
+        height: 600px;
+        padding-top: 10vh !important;
     }
 }
 
@@ -140,7 +129,7 @@ body {
     }
 
     #home-page-menu {
-        padding-top: 10vh !important;
+        padding-top: 11vh !important;
     }
 }
 

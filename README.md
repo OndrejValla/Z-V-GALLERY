@@ -18,6 +18,11 @@ The Z-V-Gallery (Zuzu Valla Gallery) website is my fourth â€˜Milestone Projectâ€
 Card number: 4242 4242 4242 4242   
 Use any expiration date (month/year) in the future and any CVC code.
 
+or
+
+4000 0025 0000 3155
+Use any expiration date (month/year) in the future and any CVC code.
+
 Thank You for understanding, Enjoy!
 
 --- 

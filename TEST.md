@@ -562,6 +562,7 @@ No major issues detected.
 ![Preview Image](media/readme-files/checkout-webhooks-py.png)
 ![Preview Image](media/readme-files/products-widgets-py.png)
 ![Preview Image](media/readme-files/profiles-forms-py.png)
+![Preview Image](media/readme-files/settings-py.png)
 
 ---
 

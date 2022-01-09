@@ -165,6 +165,11 @@ body {
     opacity: 0.5;
 }
 
+/*-- Products --*/
+#product-container {
+    min-height: 60vh;
+}
+
 /*-- About --*/
 #artist-image {
     min-height: 550px;
@@ -178,6 +183,18 @@ body {
     #artist-image {
         background-position: 50% 15%;
     }
+}
+
+/*-- Contact --*/
+.contact-form {
+    background: rgba(233, 230, 230, 0.993);
+    border: 2px solid rgba(181, 181, 181, 0.185);
+}
+
+/*-- Product Management --*/
+.product-management-form {
+    background: rgba(233, 230, 230, 0.993);
+    border: 2px solid rgba(181, 181, 181, 0.185);
 }
 
 /*-- Art Series --*/

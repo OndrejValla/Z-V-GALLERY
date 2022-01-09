@@ -23,5 +23,6 @@ class ProjectAdmin(admin.ModelAdmin):
         'image',
     )
 
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Project, ProjectAdmin)

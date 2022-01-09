@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models.fields import CommaSeparatedIntegerField
 
 from profiles.models import UserProfile
 from products.models import Product

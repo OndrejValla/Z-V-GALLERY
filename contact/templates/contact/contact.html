@@ -7,20 +7,22 @@
 {% block content %}
 <!-- Contact Form by following steps from www.twilio.com -->
 <!-- https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid -->
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col text-center mt-3">
+        <div class="col-12 col-md-6 offset-md-3 text-center mt-3">
             <h2 class="mb-2">Contact Us</h2>
-            <hr class="w-50 mb-5">
+            <hr class="w-50">
+            <h5 class="text-muted mb-5">Get in touch!</h5>
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-6 offset-md-3 mb-5">
-            <h6 class="text-center mb-3">If you have any questions, please fill out the form below and we'll get
-                back to
-                you as soon as possible.
-            </h6>
-            <small class="text-muted text-left"><i>* is a required field</i></small>
+        <div class="col-10 offset-1 col-lg-6 offset-lg-3 contact-form mb-5">
+            <div class="mt-5 mb-1">
+                <h6 class="text-center">If you have any questions, please fill out the form below and we'll get
+                    back to you as soon as possible.
+                </h6>
+                <small class="text-muted text-left"><i>* is a required field</i></small>
+            </div>
             <form action="{% url 'contact' %}" method="POST" class="mt-3">
                 {% csrf_token %}
                 {{ form|crispy }}

@@ -25,11 +25,9 @@
                             <th scope="col">Subtotal</th>
                         </tr>
                     </thead>
-
                     {% for item in bag_items %}
-
                     <tr>
-                        <!--- Product Image --->
+                        <!-- Product Image -->
                         <td class="p-3 w-25">
                             <a href="{% url 'product_detail' item.product.id %}">
                                 {% if item.product.image1 %}
@@ -39,22 +37,22 @@
                                 {% endif %}
                             </a>
                         </td>
-                        <!--- Product Name --->
+                        <!-- Product Name -->
                         <td class="py-3">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                         </td>
-                        <!--- Product Price --->
+                        <!-- Product Price -->
                         <td class="py-3">
                             <p class="my-0">${{ item.product.price }}</p>
                         </td>
-                        <!--- Product Frame --->
+                        <!-- Product Frame -->
                         <td class="py-3">
                             <p class="my-0">{% if item.product.framed %}{{ item.frame|upper }}{% else %}N/A{% endif %}
                             </p>
                         </td>
-                        <!--- Product Quantity--->
+                        <!-- Product Quantity -->
                         <td class="py-3">
-                            <!--- Plus Minus quantity buttons by Code Institute. Thanks --->
+                            <!-- Plus Minus quantity buttons by Code Institute. Thanks -->
                             <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
@@ -88,14 +86,13 @@
                             <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
                                 data-product_frame="{{ item.frame }}"><small>Remove</small></a>
                         </td>
-                        <!--- Product * Quantity = Subtotal --->
+                        <!-- Product * Quantity = Subtotal -->
                         <td class="py-3">
                             <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                     </tr>
-
                     {% endfor %}
-                    <!--- Bag Grand Total --->
+                    <!-- Bag Grand Total -->
                     <tr>
                         <td colspan="7" class="pt-5 text-center">
                             <h5><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h5>
@@ -137,7 +134,7 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');

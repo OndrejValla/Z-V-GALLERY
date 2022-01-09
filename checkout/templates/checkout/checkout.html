@@ -100,12 +100,10 @@
                     <legend class="fieldset-label text-dark px-2 w-auto">Payment</legend>
                     <!-- A Stripe card element -->
                     <div class="mb-3" id="card-element"></div>
-
                     <!-- Display form errors -->
                     <div class="mb-3 text-left text-danger" id="card-errors" role="alert"></div>
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
-
                 <div class="submit-button mt-5 mb-2">
                     <a href="{% url 'view_bag' %}" class="btn btn-outline-dark mb-1">
                         <span class="icon">

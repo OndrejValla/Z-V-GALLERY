@@ -554,7 +554,8 @@ This is the outcome for all JavaScript files, with no major issues.
 [PEP8 online](http://pep8online.com/) is used to check the python code for PEP8 requirements.
 
 I used the package AUTOPEP8 [autopep8 1.6.0](https://pypi.org/project/autopep8/) to make my Python files pep8 compliant.
-The most of the files are fully compliant, except a few files below. 
+The most of the files are fully compliant, except a few files below, which some of them I tried to modify after running 
+Flake8 in my terminal.
 No major issues detected.
 
 ![Preview Image](media/readme-files/bag-views-py.png)
@@ -564,7 +565,7 @@ No major issues detected.
 ![Preview Image](media/readme-files/products-widgets-py.png)
 ![Preview Image](media/readme-files/profiles-forms-py.png)
 ![Preview Image](media/readme-files/settings-py.png)
-
+ 
 ---
 
 

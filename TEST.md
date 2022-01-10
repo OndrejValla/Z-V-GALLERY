@@ -23,28 +23,28 @@ Go back to the [README file](https://github.com/OndrejValla/Z-V-GALLERY/blob/mai
 ### **General Site Users**
 
 ### As a general site user, I would like to:
-    1.  see the content of the page:
+1.  See the content of the page:
 
          The content of the page is unlocked for all users. Whether or not registered, users can browse the main page, 
          products (SHOP) page and contact page. 
 
-    2.  be able to see all Prints and prices:
+2.  Be able to see all Prints and prices:
 
          All users are able to see product details, images, average rating, prices and reviews.
 ![Preview Image](media/readme-files/general-user-2.png)
 
-    3.  view other users reviews:
+3.  View other users reviews:
 
          All users are able to see product details including reviews.
 ![Preview Image](media/readme-files/general-user-3.png)
 
-    4.  be able to see individual projects:
+4.  Be able to see individual projects:
 
          On the Home page, there is a section Art Series, where users are able to see a card for each project. 
          This card contains image of the project, name of the project and button link which takes users 
          to the products (SHOP) page displaying only project's prints.
 
-    5.  see all products added in to the shopping bag:
+5.  See all products added in to the shopping bag:
 
          All site users are able to add products in the bag. 
          After a product is added in to the bag, the bag icon in the right top corner change the color 
@@ -54,14 +54,14 @@ Go back to the [README file](https://github.com/OndrejValla/Z-V-GALLERY/blob/mai
          Also after clicking the shopping bag icon, user is directed to the shopping bag page, 
          where is able to see all the items in the bag.
 
-    6.  be able to adjust the shopping bag before checkout:
+6.  Be able to adjust the shopping bag before checkout:
 
          Before user decide to click Secure Checkout button on the bottom of the shopping bag page, 
          there is an option to update the bag content by using plus + and minus -  buttons for the item quantity. 
          Update and remove button to update the quantity or to remove the item from the bag.
 ![Preview Image](media/readme-files/general-user-6.png)
 
-    7.  be able to purchase prints as a guest, without creating the profile:
+7.  Be able to purchase prints as a guest, without creating the profile:
 
          All site users can make a purchase. For unsigned or unregistered users, 
          there are register and login buttons underneath of the billing form, 
@@ -70,19 +70,19 @@ Go back to the [README file](https://github.com/OndrejValla/Z-V-GALLERY/blob/mai
          to save billing details in to the profile.
 ![Preview Image](media/readme-files/general-user-7-2.png)
 
-    8.  get the confirmation email after the purchase:
+8.  Get the confirmation email after the purchase:
 
          In the checkout billing form, there is a mandatory field for users email address. 
          After the purchase, user does receive a confirmation email with al the order details.
 ![Preview Image](media/readme-files/general-user-8.png)
 
-    9.  be able to register and create my profile:
+9.  Be able to register and create my profile:
 
          Unregistered users have a option to register. After registration, they are able to login and view their profile. 
          Once they are registered and make a purchase, order history is displayed in the profile page.
 ![Preview Image](media/readme-files/general-user-9-1.png)
 
-    10. be able to contact the store owner, for further details:
+10. Be able to contact the store owner, for further details:
 
          If site users have any questions or concerns, 
          they have a option to contact the site owner through the contact form page. 
@@ -91,7 +91,7 @@ Go back to the [README file](https://github.com/OndrejValla/Z-V-GALLERY/blob/mai
          with customer's message and details.
 ![Preview Image](media/readme-files/general-user-10-1.png)
     
-    11. find out more through social media:
+11. Find out more through social media:
 
          On the bottom of the page, in the footer section, there are two social media links, 
          directly taking users to Zuzu Valla's Instagram profile and LinkedIn profile.
@@ -100,7 +100,7 @@ Go back to the [README file](https://github.com/OndrejValla/Z-V-GALLERY/blob/mai
 ### **Registered Users**
 
 ### As a registered user, I would like to:
-    1.  be able to easily login and log out:
+1.  Be able to easily login and log out:
 
          On all pages in the right top corner, there is My Account section with Login button, 
          and if already logged in, Logout button.
@@ -108,32 +108,32 @@ Go back to the [README file](https://github.com/OndrejValla/Z-V-GALLERY/blob/mai
          Once logged in, logout button in right top corner takes users to the logout page, 
          double checking whether the user wants to log out.
 
-    2.  save and edit my billing details in my profile:
+2.  Save and edit my billing details in my profile:
 
          Users can manualy fill out the billing details in their profile, or when they are making the purchase, 
          they can click the tickbox on the checkout page, confirming, 
          that they wish to save their billing details in to their profile for the future use. All very simple process.
 ![Preview Image](media/readme-files/general-user-7-1.png)
 
-    3.  see my purchase history details:
+3.  See my purchase history details:
 
          CURRENTLY ONLY WORKING for registered users with their profiles created before the purchase. 
          This is one of the current BUGS which I am hoping to sort out in the future.
 ![Preview Image](media/readme-files/general-user-9-2.png)
 
-    4.  be able to comment / review products:
+4.  Be able to comment / review products:
 
          Registered users are able to leave one review under each product.
 ![Preview Image](media/readme-files/registered-user-4.png)
 
-    5.  be able to edit, or delete my review:
+5.  Be able to edit, or delete my review:
 
          Once the review is submitted, registered (logged in) user is able to go back and click Edit or Delete buttons
           on the bottom of the review. These two buttons are only displayed to the user under their review.
 ![Preview Image](media/readme-files/registered-user-5.png)
 
 
-    6.  easily change my forgotten password:
+6.  Easily change my forgotten password:
 
          This website has pre-programmed forgotten password sites and logic from the Django framework. 
          All works well and easy. 
@@ -145,17 +145,18 @@ Go back to the [README file](https://github.com/OndrejValla/Z-V-GALLERY/blob/mai
 ### **Admin User**
 
 ### As a Admin user, I would like to:
-    1.  be able to create new project categories:
+
+1.  Be able to create new project categories:
 
          This function is currently only available through the admin section of this page.
          After the category is created, new category card is shown in the home page Art series section.
 
-    2.  edit or delete existing project categories:
+2.  Edit or delete existing project categories:
 
          As mentioned above, this function is currently only available through the admin section of this page.
          Admin is able to edit the category name and image.
 
-    3.  be able to add new products with all the details and images:
+3.  Be able to add new products with all the details and images:
 
          This function is available for the Admin user from the main page or from the Admin section of the page.
          On the main page, in the right top corner, there is a link (displayed only for the admin) 
@@ -163,7 +164,7 @@ Go back to the [README file](https://github.com/OndrejValla/Z-V-GALLERY/blob/mai
          This Product Management link takes admin user to the Add a product page
          where is a form to fill up with all the relevant fields for each product. See picture for more details.
     
-    4.  be able to edit or delete uploaded products:
+4.  Be able to edit or delete uploaded products:
 
          In the products page there is a little edit button (visible for the Admin only) 
          which opens the Edit a Product page of the Product Management section with loaded details of the individual product. 
@@ -181,11 +182,11 @@ Go back to the [README file](https://github.com/OndrejValla/Z-V-GALLERY/blob/mai
          The product edit and delete functionality is also available for the Admin user in the admin section of the page, 
          where admin can select each of the products, edit it or delete it.
  
-    5.  MySQL and Postgres database to store page content effectively and safely:
+5.  MySQL and Postgres database to store page content effectively and safely:
 
          Both of the databases was working very well during the process of building and testing of this page.
 
-    6.  have a access to all website messages, 
+6.  Have a access to all website messages, 
     reviews and user profiles / email addresses through my Admin loggin in the database:
     
          This is all accessible for the Admin user.
@@ -665,3 +666,13 @@ There was a few technical issues now and then while building this project.
 ![Preview Image](media/readme-files/error-500-3.png)
 
 - This was another great example of the learning curve.
+
+
+**5. The fifth** example of the bug: 
+- When Unregistered / Unsigned user does purchase the item, their email adress is required. After the order is submitted, 
+  if user decide to sign up and create their account, by using the same email address as used on the purchase, they are not able to view
+  their recent purchase in the order history on their newly created profile. Currently the only way to get it in their order history is by me as an Admin, manually connecting the order to the user profile in the admin section of the page. After this process, the order is visible in their profile order history.
+- This is also on my to do list of future improvements.
+
+---
+---

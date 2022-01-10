@@ -36,7 +36,7 @@ def contact(request):
                 fail_silently=False,
             )
 
-            # # send message to admin
+            # Send message to admin
             admin_mail = settings.DEFAULT_FROM_EMAIL
             subject = contact_form.cleaned_data['subject']
             body = render_to_string('contact/confirmation_emails/' +
@@ -54,7 +54,7 @@ def contact(request):
                 [admin_mail],
                 fail_silently=False,
             )
-            # save message to database
+            # Save message to database
             contact_form.save()
 
             messages.success(request, 'Your message was sent successfully!')

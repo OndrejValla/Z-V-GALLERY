@@ -18,7 +18,7 @@ def add_review(request, product_id):
             product = get_object_or_404(Product, pk=product_id)
             user = UserProfile.objects.get(user=request.user)
             review_form = ReviewForm(request.POST)
-            # check if user already added a review
+            # Check if user already added a review
             added_review = Review.objects.filter(user=user, product=product)
             if added_review.exists():
                 messages.error(request, 'You already reviewed this product. \

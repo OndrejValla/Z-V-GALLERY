@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import Product, Project
 
 
-# Register your models here.
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'name',

@@ -12,7 +12,7 @@ def view_bag(request):
     return render(request, 'bag/bag.html')
 
 
-# Views by The Code Institute, Boutique project. Thanks
+# Views by The Code Institute, Boutique Ado project. Thanks
 # Add To The Bag View
 def add_to_bag(request, item_id):
     """ Add a quantity of the specific product to the shopping bag """

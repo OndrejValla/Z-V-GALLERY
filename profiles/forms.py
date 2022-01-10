@@ -2,7 +2,7 @@ from django import forms
 from .models import UserProfile
 
 
-# by The Code Institute
+# Code By The Code Institute
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile

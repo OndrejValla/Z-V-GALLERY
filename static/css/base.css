@@ -170,6 +170,12 @@ body {
     min-height: 60vh;
 }
 
+/*-- Product Management --*/
+.product-management-form {
+    background: rgba(233, 230, 230, 0.993);
+    border: 2px solid rgba(181, 181, 181, 0.185);
+}
+
 /*-- About --*/
 #artist-image {
     min-height: 550px;
@@ -187,12 +193,6 @@ body {
 
 /*-- Contact --*/
 .contact-form {
-    background: rgba(233, 230, 230, 0.993);
-    border: 2px solid rgba(181, 181, 181, 0.185);
-}
-
-/*-- Product Management --*/
-.product-management-form {
     background: rgba(233, 230, 230, 0.993);
     border: 2px solid rgba(181, 181, 181, 0.185);
 }

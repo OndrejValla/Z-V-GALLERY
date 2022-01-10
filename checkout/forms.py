@@ -2,7 +2,7 @@ from django import forms
 from .models import Order
 
 
-# by The Code Institute
+# Code By The Code Institute
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order

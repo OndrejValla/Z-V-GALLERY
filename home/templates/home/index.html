@@ -6,10 +6,10 @@
 <div id="home-page-menu" class="container mt-3 mb-5">
     <div id="color-overlay"></div>
     <div class="row justify-content-center">
-        <a href="#home-art-series" class="col-10 col-sm-6 home-page-button btn">Art Series</a>
+        <a href="{% url 'home' %}#home-art-series" class="col-10 col-sm-6 home-page-button btn">Art Series</a>
     </div>
     <div class="row justify-content-center">
-        <a href="#home-artist" class="col-10 col-sm-6 home-page-button btn">About</a>
+        <a href="{% url 'home' %}#home-artist" class="col-10 col-sm-6 home-page-button btn">About</a>
     </div>
     <div class="row justify-content-center">
         <a href="{% url 'contact' %}" class="col-10 col-sm-6 home-page-button btn">Contact Us</a>
@@ -30,6 +30,7 @@
 <!-- Art Series Individual Cards -->
     {% for project in projects %}
     <div class="row art-series-row mt-3 mb-2">
+        <!-- Even Cards in the loop -->
         {% if forloop.counter|divisibleby:2 %}
         <div class="col-12 col-lg-5">
             <a href="{% url 'products' %}?project={{ project.name }}">
@@ -53,6 +54,7 @@
                 </a>
             </div>
         </div>
+        <!-- Odd Cards in the loop -->
         {% else %}
         <div class="col-12 col-lg-5 order-lg-last">
             <a href="{% url 'products' %}?project={{ project.name }}">
